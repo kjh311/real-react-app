@@ -11,12 +11,18 @@ const person = {
 
 const people = {
   peeps: [
-    { name: "David", occupation: "Government Employee", age: 45 },
-    { name: "Kevin", occupation: "Web Developer", age: 46 },
-    { name: "Eric", occupation: "Dog Recuer", age: 39 },
+    { name: "Kevin", age: 46 },
+    { name: "David", age: 45 },
+    { name: "Eric", age: 39 },
+    { name: "Peter", age: 45 },
   ],
 };
-// console.log(people.peeps[2].name);
+
+const totalPeopleAge = people.peeps.reduce((sum, peep) => sum + peep.age, 0);
+console.log(totalPeopleAge);
+
+const peepNames = people.peeps.map((peep) => peep.name);
+console.log(peepNames);
 
 const { name, age, occupation } = person;
 const [one, two, three, four, five, six] = nums;
@@ -25,9 +31,6 @@ const numbers = [...nums, 7, 8];
 
 const totalNumbers = numbers.reduce((sum, num) => sum + num, 0);
 console.log(totalNumbers);
-
-const totalPeopleAge = people.peeps.reduce((sum, peep) => sum + peep.age, 0);
-console.log("totalPeopleAge = ", totalPeopleAge);
 
 function App() {
   return (
