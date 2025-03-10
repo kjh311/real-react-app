@@ -1,5 +1,7 @@
 // import logo from "./logo.svg";
 import "./App.css";
+import React from "react";
+import ImageGallery from "./ImageGallery";
 
 const nums = [1, 2, 3, 4, 5, 6];
 
@@ -53,6 +55,8 @@ function App() {
       ))}
 
       <div>{numbers.join(", ")}</div>
+
+      <ImageGallery />
     </div>
   );
 }
