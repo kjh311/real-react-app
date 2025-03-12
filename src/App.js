@@ -7,6 +7,7 @@ import Test from "./Test";
 import NameForm from "./NameForm";
 import CheckBox from "./CheckBox";
 import ItemList from "./ItemList";
+import ItemList2 from "./ItemList2";
 
 function App() {
   return (
@@ -18,7 +19,7 @@ function App() {
       {/* <Counter /> */}
       {/* <NameForm /> */}
       {/* <CheckBox /> */}
-      <ItemList />
+      <ItemList2 />
     </div>
   );
 }
