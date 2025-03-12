@@ -5,6 +5,7 @@ import ImageGallery from "./ImageGallery";
 import Counter from "./Counter";
 import Test from "./Test";
 import NameForm from "./NameForm";
+import CheckBox from "./CheckBox";
 
 function App() {
   return (
@@ -14,7 +15,8 @@ function App() {
 
       {/* <ImageGallery /> */}
       {/* <Counter /> */}
-      <NameForm />
+      {/* <NameForm /> */}
+      <CheckBox />
     </div>
   );
 }
