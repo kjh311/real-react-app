@@ -8,11 +8,11 @@ function Counter() {
   };
 
   const increaseCount = () => {
-    setCount(count + 1);
+    setCount((prevCount) => prevCount + 1);
   };
 
   const decreaseCount = () => {
-    setCount(count - 1);
+    setCount((prevCount) => prevCount - 1);
   };
 
   return (
