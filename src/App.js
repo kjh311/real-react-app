@@ -8,6 +8,7 @@ import NameForm from "./NameForm";
 import CheckBox from "./CheckBox";
 import ItemList from "./ItemList";
 import Resource from "./Resource";
+import WindowSize from "./WindowSize";
 
 function App() {
   return (
@@ -19,7 +20,8 @@ function App() {
       {/* <Counter /> */}
       {/* <NameForm /> */}
       {/* <CheckBox /> */}
-      <Resource />
+      {/* <Resource /> */}
+      <WindowSize />
     </div>
   );
 }
