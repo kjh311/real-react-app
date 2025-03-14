@@ -9,6 +9,7 @@ import CheckBox from "./CheckBox";
 import ItemList from "./ItemList";
 import Resource from "./Resource";
 import WindowSize from "./WindowSize";
+import FetchJoke from "./FetchJoke";
 
 function App() {
   return (
@@ -21,7 +22,8 @@ function App() {
       {/* <NameForm /> */}
       {/* <CheckBox /> */}
       {/* <Resource /> */}
-      <WindowSize />
+      {/* <WindowSize /> */}
+      <FetchJoke />
     </div>
   );
 }
