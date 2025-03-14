@@ -7,6 +7,7 @@ import Test from "./Test";
 import NameForm from "./NameForm";
 import CheckBox from "./CheckBox";
 import ItemList from "./ItemList";
+import Resource from "./Resource";
 
 function App() {
   return (
@@ -15,9 +16,10 @@ function App() {
       {/* <Test /> */}
 
       {/* <ImageGallery /> */}
-      <Counter />
+      {/* <Counter /> */}
       {/* <NameForm /> */}
       {/* <CheckBox /> */}
+      <Resource />
     </div>
   );
 }
