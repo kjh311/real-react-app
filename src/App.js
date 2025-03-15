@@ -13,6 +13,7 @@ import FetchJoke from "./FetchJoke";
 import DogPic from "./DogPic";
 import CatPic from "./CatPic";
 import StarWars from "./StarWars";
+import Calculator from "./Calculator";
 
 function App() {
   return (
@@ -29,7 +30,8 @@ function App() {
       {/* <FetchJoke /> */}
       {/* <DogPic /> */}
       {/* <CatPic /> */}
-      <StarWars />
+      {/* <StarWars /> */}
+      <Calculator />
     </div>
   );
 }

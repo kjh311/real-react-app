@@ -11,7 +11,6 @@ export default function StarWars() {
 
   const handleSubmit = (e) => {
     if (input.trim !== "") {
-      e.preventDefault();
       setNum(input);
       setInput("");
       console.log(input);
@@ -55,7 +54,7 @@ export default function StarWars() {
           <p>Eye Color: {info.eye_color}</p>
         </div>
       ) : (
-        <div>"Loading..."</div>
+        <div></div>
       )}
     </div>
   );
