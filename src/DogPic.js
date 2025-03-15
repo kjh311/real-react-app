@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 
 export default function DogPic() {
   const [pic, setPic] = useState("");
-  const [count, setCount] = useState(0);
+  //   const [count, setCount] = useState(0);
 
   useEffect(() => {
     const getPic = async () => {
@@ -17,7 +17,7 @@ export default function DogPic() {
     };
     getPic();
 
-    console.log(`Count, ${count}`);
+    // console.log(`Count, ${count}`);
   }, []);
 
   return (

@@ -11,6 +11,7 @@ import Resource from "./Resource";
 import WindowSize from "./WindowSize";
 import FetchJoke from "./FetchJoke";
 import DogPic from "./DogPic";
+import CatPic from "./CatPic";
 
 function App() {
   return (
@@ -25,7 +26,8 @@ function App() {
       {/* <Resource /> */}
       {/* <WindowSize /> */}
       {/* <FetchJoke /> */}
-      <DogPic />
+      {/* <DogPic /> */}
+      <CatPic />
     </div>
   );
 }
