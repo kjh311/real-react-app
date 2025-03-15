@@ -12,6 +12,7 @@ import WindowSize from "./WindowSize";
 import FetchJoke from "./FetchJoke";
 import DogPic from "./DogPic";
 import CatPic from "./CatPic";
+import StarWars from "./StarWars";
 
 function App() {
   return (
@@ -27,7 +28,8 @@ function App() {
       {/* <WindowSize /> */}
       {/* <FetchJoke /> */}
       {/* <DogPic /> */}
-      <CatPic />
+      {/* <CatPic /> */}
+      <StarWars />
     </div>
   );
 }
