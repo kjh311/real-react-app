@@ -10,6 +10,7 @@ import ItemList from "./ItemList";
 import Resource from "./Resource";
 import WindowSize from "./WindowSize";
 import FetchJoke from "./FetchJoke";
+import DogPic from "./DogPic";
 
 function App() {
   return (
@@ -23,7 +24,8 @@ function App() {
       {/* <CheckBox /> */}
       {/* <Resource /> */}
       {/* <WindowSize /> */}
-      <FetchJoke />
+      {/* <FetchJoke /> */}
+      <DogPic />
     </div>
   );
 }
