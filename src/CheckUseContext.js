@@ -1,5 +1,6 @@
-import React, { useState, useContext } from "react";
+import React, { useContext } from "react";
 import { Context } from "./App";
+import SignInButton from "./SignInButton";
 
 export default function CheckUseContext() {
   const [checked, setChecked] = useContext(Context);
@@ -10,8 +11,14 @@ export default function CheckUseContext() {
 
   return (
     <div>
-      <input type="checkbox" checked={checked} onChange={handleCheck} />
-      <h1>{`From CheckUseContext.js: ${checked}`}</h1>
+      <input
+        id="checkbox"
+        type="checkbox"
+        checked={checked}
+        onChange={handleCheck}
+      />
+      <h1>{checked ? "Checked" : "Unchecked"}</h1>
+      <SignInButton />
     </div>
   );
 }
