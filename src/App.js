@@ -14,15 +14,15 @@ import DogPic from "./DogPic";
 import CatPic from "./CatPic";
 import StarWars from "./StarWars";
 import Calculator from "./Calculator";
-import SignInButton from "./SignInButton";
+import CheckUseContext from "./CheckUseContext";
 
 export const Context = React.createContext();
 
 function App() {
-  const [signedIn, setSignedIn] = useState(false);
+  const [checked, setChecked] = useState(false);
 
   return (
-    <Context.Provider value={[signedIn, setSignedIn]}>
+    <Context.Provider value={[checked, setChecked]}>
       <div className="App">
         <h1>React Practice</h1>
         {/* <Test /> */}
@@ -38,8 +38,8 @@ function App() {
         {/* <CatPic /> */}
         {/* <StarWars /> */}
         {/* <Calculator /> */}
-        <SignInButton />
-        <h1>{signedIn ? "Sign Out" : "Sign In"}</h1>
+        <CheckUseContext />
+        <h1>{`From App.js: ${checked}`}</h1>
       </div>
     </Context.Provider>
   );
