@@ -55,6 +55,7 @@ export default function Calculator() {
     }
     const subtractionResult = operation(a, b, subtract);
     setSubtractResult(subtractionResult);
+    // setSubtractResult(null);
     console.log("Subtraction Result:", subtractionResult);
   }
 

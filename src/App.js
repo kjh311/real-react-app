@@ -1,6 +1,6 @@
 // import logo from "./logo.svg";
 import "./App.css";
-import React from "react";
+import React, { useState, useContext } from "react";
 import ImageGallery from "./ImageGallery";
 import Counter from "./Counter";
 import Test from "./Test";
@@ -14,25 +14,34 @@ import DogPic from "./DogPic";
 import CatPic from "./CatPic";
 import StarWars from "./StarWars";
 import Calculator from "./Calculator";
+import SignInButton from "./SignInButton";
+
+export const Context = React.createContext();
 
 function App() {
-  return (
-    <div className="App">
-      <h1>React Practice</h1>
-      {/* <Test /> */}
+  const [signedIn, setSignedIn] = useState(false);
 
-      {/* <ImageGallery /> */}
-      {/* <Counter /> */}
-      {/* <NameForm /> */}
-      {/* <CheckBox /> */}
-      {/* <Resource /> */}
-      {/* <WindowSize /> */}
-      {/* <FetchJoke /> */}
-      {/* <DogPic /> */}
-      {/* <CatPic /> */}
-      {/* <StarWars /> */}
-      <Calculator />
-    </div>
+  return (
+    <Context.Provider value={[signedIn, setSignedIn]}>
+      <div className="App">
+        <h1>React Practice</h1>
+        {/* <Test /> */}
+
+        {/* <ImageGallery /> */}
+        {/* <Counter /> */}
+        {/* <NameForm /> */}
+        {/* <CheckBox /> */}
+        {/* <Resource /> */}
+        {/* <WindowSize /> */}
+        {/* <FetchJoke /> */}
+        {/* <DogPic /> */}
+        {/* <CatPic /> */}
+        {/* <StarWars /> */}
+        {/* <Calculator /> */}
+        <SignInButton />
+        <h1>{signedIn ? "Sign Out" : "Sign In"}</h1>
+      </div>
+    </Context.Provider>
   );
 }
 
