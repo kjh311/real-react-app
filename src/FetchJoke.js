@@ -1,7 +1,8 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
+import { JokeContext } from "./App";
 
 export default function FetchJoke() {
-  const [joke, setJoke] = useState("");
+  const [joke, setJoke] = useContext(JokeContext);
 
   //   useEffect(() => {
   //     const getJoke = async () => {

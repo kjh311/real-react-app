@@ -14,15 +14,14 @@ import DogPic from "./DogPic";
 import CatPic from "./CatPic";
 import StarWars from "./StarWars";
 import Calculator from "./Calculator";
-import HelloName from "./HelloName";
 
-export const Context = React.createContext();
+export const JokeContext = React.createContext();
 
 function App() {
-  const [name, setName] = useState("");
+  const [joke, setJoke] = useState("");
 
   return (
-    <Context.Provider value={[name, setName]}>
+    <JokeContext value={[joke, setJoke]}>
       <div className="App">
         <h1>React Practice</h1>
         {/* <Test /> */}
@@ -33,15 +32,15 @@ function App() {
         {/* <CheckBox /> */}
         {/* <Resource /> */}
         {/* <WindowSize /> */}
-        {/* <FetchJoke /> */}
+        <FetchJoke />
+        <h3>{joke ? `From App.js: ${joke}` : ""}</h3>
         {/* <DogPic /> */}
         {/* <CatPic /> */}
         {/* <StarWars /> */}
         {/* <Calculator /> */}
-        <HelloName />
-        <h1>{name ? `Hello ${name}!` : ""}</h1>
+        {/* <HelloName /> */}
       </div>
-    </Context.Provider>
+    </JokeContext>
   );
 }
 
