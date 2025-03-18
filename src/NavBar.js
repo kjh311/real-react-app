@@ -30,8 +30,9 @@ export default function Navbar() {
     { text: "Joke", path: "/fetchjoke" },
     { text: "Calculator", path: "/calculator" },
     { text: "Counter", path: "/counter" },
-    { text: "ArtFilter", path: "/artFilter" },
+    // { text: "ArtFilter", path: "/artFilter" },
     { text: "FilterFruit", path: "/filterFruits" },
+    { text: "Debounce", path: "/debounce" },
   ];
 
   return (
