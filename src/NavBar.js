@@ -33,6 +33,7 @@ export default function Navbar() {
     // { text: "ArtFilter", path: "/artFilter" },
     { text: "FilterFruit", path: "/filterFruits" },
     { text: "Debounce", path: "/debounce" },
+    { text: "Phone", path: "/phone" },
   ];
 
   return (

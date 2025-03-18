@@ -20,6 +20,7 @@ import FilterFruit from "./FilterFruit";
 import ArtFilter from "./ArtFilter";
 import NavBar from "./NavBar";
 import Debounce from "./Debounce";
+import PhoneNumber from "./PhoneNumber";
 
 function Home() {
   return (
@@ -56,6 +57,7 @@ function App() {
         {/* <Route path="/artFilter" element={<ArtFilter />} /> */}
         <Route path="/filterFruits" element={<FilterFruit />} />
         <Route path="/debounce" element={<Debounce />} />
+        <Route path="/phone" element={<PhoneNumber />} />
       </Routes>
     </div>
   );
