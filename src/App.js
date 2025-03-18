@@ -16,7 +16,7 @@ import CatPic from "./CatPic";
 import StarWars from "./StarWars";
 import Calculator from "./Calculator";
 // import HelloName from "./HelloName";
-import Nav from "./Nav";
+import NavBar from "./NavBar";
 
 function Home() {
   return (
@@ -31,7 +31,8 @@ function App() {
   return (
     <div className="App">
       {/* <h1>React Practice</h1> */}
-      <Nav />
+      <NavBar />
+      <br />
       {/* <Test /> */}
 
       {/* <Counter /> */}
