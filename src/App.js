@@ -35,7 +35,6 @@ function App() {
       <br />
       {/* <Test /> */}
 
-      {/* <Counter /> */}
       {/* <NameForm /> */}
       {/* <CheckBox /> */}
       {/* <Resource /> */}
@@ -43,14 +42,14 @@ function App() {
 
       {/* <CatPic /> */}
 
-      {/* <Calculator /> */}
-
       <Routes>
         <Route path="/starwars" element={<StarWars />} />
-        <Route path="/imagegallery" element={<ImageGallery />} />
+        <Route path="/imageGallery" element={<ImageGallery />} />
         <Route path="/" element={<Home />} />
         <Route path="/dogpic" element={<DogPic />} />
         <Route path="/fetchJoke" element={<FetchJoke />} />
+        <Route path="/calculator" element={<Calculator />} />
+        <Route path="/counter" element={<Counter />} />
       </Routes>
     </div>
   );

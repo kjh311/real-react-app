@@ -25,9 +25,11 @@ export default function Navbar() {
   const menuItems = [
     { text: "Home", path: "/" },
     { text: "Star Wars", path: "/starwars" },
-    { text: "Image Gallery", path: "/imagegallery" },
+    { text: "Image Gallery", path: "/imageGallery" },
     { text: "Dog Pic", path: "/dogpic" },
     { text: "Joke", path: "/fetchjoke" },
+    { text: "Calculator", path: "/calculator" },
+    { text: "Counter", path: "/counter" },
   ];
 
   return (
