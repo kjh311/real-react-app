@@ -14,38 +14,33 @@ import DogPic from "./DogPic";
 import CatPic from "./CatPic";
 import StarWars from "./StarWars";
 import Calculator from "./Calculator";
-import CheckUseContext from "./CheckUseContext";
+import HelloName from "./HelloName";
 
 export const Context = React.createContext();
-export const SignInContext = React.createContext();
 
 function App() {
-  const [checked, setChecked] = useState(false);
-  const [signedIn, setSignedIn] = useState(false);
+  const [name, setName] = useState("");
 
   return (
-    <Context.Provider value={[checked, setChecked]}>
-      <SignInContext.Provider value={[signedIn, setSignedIn]}>
-        <div className="App">
-          <h1>React Practice</h1>
-          {/* <Test /> */}
+    <Context.Provider value={[name, setName]}>
+      <div className="App">
+        <h1>React Practice</h1>
+        {/* <Test /> */}
 
-          {/* <ImageGallery /> */}
-          {/* <Counter /> */}
-          {/* <NameForm /> */}
-          {/* <CheckBox /> */}
-          {/* <Resource /> */}
-          {/* <WindowSize /> */}
-          {/* <FetchJoke /> */}
-          {/* <DogPic /> */}
-          {/* <CatPic /> */}
-          {/* <StarWars /> */}
-          {/* <Calculator /> */}
-          <CheckUseContext />
-          <h1>{`From App.js: ${checked ? "checked" : "unchecked"}`}</h1>
-          <h1>{signedIn ? "sign out" : "sign in"}</h1>
-        </div>
-      </SignInContext.Provider>
+        {/* <ImageGallery /> */}
+        {/* <Counter /> */}
+        {/* <NameForm /> */}
+        {/* <CheckBox /> */}
+        {/* <Resource /> */}
+        {/* <WindowSize /> */}
+        {/* <FetchJoke /> */}
+        {/* <DogPic /> */}
+        {/* <CatPic /> */}
+        {/* <StarWars /> */}
+        {/* <Calculator /> */}
+        <HelloName />
+        <h1>{name ? `Hello ${name}!` : ""}</h1>
+      </div>
     </Context.Provider>
   );
 }
