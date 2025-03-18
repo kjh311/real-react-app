@@ -2,7 +2,7 @@ import React, { useState, useEffect, useContext } from "react";
 import { JokeContext } from "./App";
 
 export default function FetchJoke() {
-  const [joke, setJoke] = useContext(JokeContext);
+  const [joke, setJoke] = useState("");
 
   //   useEffect(() => {
   //     const getJoke = async () => {
