@@ -44,13 +44,31 @@ export default function FilterFruit() {
         return <h1 key={index}>{item}</h1>;
       })} */}
 
-      <div>
+      {/* <div>
         {filteredFruits.length > 0 ? (
           filteredFruits.map((fruit, index) => <h1 key={index}>{fruit}</h1>)
         ) : (
           <h1>No fruits found</h1>
         )}
-      </div>
+      </div> */}
+      <ul>
+        {filteredFruits.length > 0 ? (
+          filteredFruits.map((fruit, index) => {
+            const regex = new RegExp(`(${fruitInput})`, "i");
+            const parts = fruit.split(regex);
+
+            return (
+              <li key={index}>
+                {parts.map((part, i) =>
+                  regex.test(part) ? <strong key={i}>{part}</strong> : part
+                )}
+              </li>
+            );
+          })
+        ) : (
+          <li>No fruits found</li>
+        )}
+      </ul>
     </div>
   );
 }

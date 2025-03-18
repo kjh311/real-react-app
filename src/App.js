@@ -17,6 +17,7 @@ import StarWars from "./StarWars";
 import Calculator from "./Calculator";
 // import HelloName from "./HelloName";
 import FilterFruit from "./FilterFruit";
+import ArtFilter from "./ArtFilter";
 import NavBar from "./NavBar";
 
 function Home() {
@@ -51,7 +52,8 @@ function App() {
         <Route path="/fetchJoke" element={<FetchJoke />} />
         <Route path="/calculator" element={<Calculator />} />
         <Route path="/counter" element={<Counter />} />
-        <Route path="/filterFruit" element={<FilterFruit />} />
+        <Route path="/artFilter" element={<ArtFilter />} />
+        <Route path="/filterFruits" element={<FilterFruit />} />
       </Routes>
     </div>
   );
