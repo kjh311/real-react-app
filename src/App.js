@@ -21,6 +21,7 @@ import ArtFilter from "./ArtFilter";
 import NavBar from "./NavBar";
 import Debounce from "./Debounce";
 import PhoneNumber from "./PhoneNumber";
+import MagicCards from "./MagicCards";
 
 function Home() {
   return (
@@ -58,6 +59,7 @@ function App() {
         <Route path="/filterFruits" element={<FilterFruit />} />
         <Route path="/debounce" element={<Debounce />} />
         <Route path="/phone" element={<PhoneNumber />} />
+        <Route path="/magicCards" element={<MagicCards />} />
       </Routes>
     </div>
   );

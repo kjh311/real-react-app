@@ -34,6 +34,7 @@ export default function Navbar() {
     { text: "FilterFruit", path: "/filterFruits" },
     { text: "Debounce", path: "/debounce" },
     { text: "Phone", path: "/phone" },
+    { text: "Magic Cards", path: "/magicCards" },
   ];
 
   return (
