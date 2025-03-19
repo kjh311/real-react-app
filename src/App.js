@@ -24,6 +24,8 @@ import PhoneNumber from "./PhoneNumber";
 import MagicCards from "./MagicCards";
 
 function Home() {
+  console.log("Environment:", process.env.NODE_ENV);
+
   return (
     <div>
       {/* <h1>Home</h1> */}
