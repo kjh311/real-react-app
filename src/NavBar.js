@@ -35,6 +35,7 @@ export default function Navbar() {
     { text: "Debounce", path: "/debounce" },
     { text: "Phone", path: "/phone" },
     { text: "Magic Cards", path: "/magicCards" },
+    { text: "UseRef", path: "/useRef" },
   ];
 
   return (

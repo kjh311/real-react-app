@@ -22,6 +22,7 @@ import NavBar from "./NavBar";
 import Debounce from "./Debounce";
 import PhoneNumber from "./PhoneNumber";
 import MagicCards from "./MagicCards";
+import UseRef from "./UseRef";
 
 function Home() {
   console.log("Environment:", process.env.NODE_ENV);
@@ -62,6 +63,7 @@ function App() {
         <Route path="/debounce" element={<Debounce />} />
         <Route path="/phone" element={<PhoneNumber />} />
         <Route path="/magicCards" element={<MagicCards />} />
+        <Route path="/useRef" element={<UseRef />} />
       </Routes>
     </div>
   );
