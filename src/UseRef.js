@@ -1,27 +1,19 @@
-import React, { useRef, useEffect, useState } from "react";
+import React, { useRef, useState } from "react";
 
 export default function UseRef() {
-  const inputRef = useRef(null);
-  const counterRef = useRef(0);
   const [count, setCount] = useState(0);
-
-  useEffect(() => {
-    inputRef.current.focus();
-  }, []);
+  const countRef = useRef(0);
 
   const handleClick = () => {
     setCount(count + 1);
-    counterRef.current += 1;
-    console.table("Count: " + count);
-    console.log(`CounterRef: ${counterRef.current}`);
+    countRef.current += 1;
+    console.log(`Count: ${count}`);
+    console.log(`CountRef: ${countRef.current}`);
   };
 
   return (
     <div>
-      <input ref={inputRef} type="text" placeholder="Focus, Danial San!" />
-      <div>
-        <button onClick={handleClick}>Increment</button>
-      </div>
+      <button onClick={handleClick}>Inrement</button>
     </div>
   );
 }
