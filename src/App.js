@@ -46,7 +46,6 @@ function App() {
       {/* <NameForm /> */}
       {/* <CheckBox /> */}
       {/* <Resource /> */}
-      {/* <WindowSize /> */}
 
       {/* <CatPic /> */}
 
@@ -64,6 +63,7 @@ function App() {
         <Route path="/phone" element={<PhoneNumber />} />
         <Route path="/magicCards" element={<MagicCards />} />
         <Route path="/useRef" element={<UseRef />} />
+        <Route path="/window" element={<WindowSize />} />
       </Routes>
     </div>
   );

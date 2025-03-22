@@ -36,6 +36,7 @@ export default function Navbar() {
     { text: "Phone", path: "/phone" },
     { text: "Magic Cards", path: "/magicCards" },
     { text: "UseRef", path: "/useRef" },
+    { text: "Window", path: "/window" },
   ];
 
   return (
