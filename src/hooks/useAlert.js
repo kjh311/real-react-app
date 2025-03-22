@@ -1,3 +1,3 @@
 export default function useAlert() {
-  return () => alert("Hello!");
+  return (name) => alert(`Hello ${name}`);
 }
