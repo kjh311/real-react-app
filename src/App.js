@@ -25,6 +25,7 @@ import MagicCards from "./MagicCards";
 import UseRef from "./UseRef";
 import Name from "./Name";
 import CheckedHook from "./CheckedHook";
+import CreateList from "./CreateList";
 
 function Home() {
   console.log("Environment:", process.env.NODE_ENV);
@@ -68,6 +69,7 @@ function App() {
         <Route path="/window" element={<WindowSize />} />
         <Route path="/name" element={<Name />} />
         <Route path="/checkedHook" element={<CheckedHook />} />
+        <Route path="/createList" element={<CreateList />} />
       </Routes>
     </div>
   );
