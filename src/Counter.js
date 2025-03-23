@@ -1,34 +1,14 @@
-import React, { useState } from "react";
+import useCounter from "./hooks/useCounter";
 
-function Counter() {
-  const [count, setCount] = useState(0);
-
-  const resetCount = () => {
-    setCount(0);
-  };
-
-  const increaseCount = () => {
-    setCount((prevCount) => prevCount + 1);
-  };
-
-  const decreaseCount = () => {
-    setCount((prevCount) => prevCount - 1);
-  };
+export default function Counter() {
+  const { count, increment, decrement, reset } = useCounter();
 
   return (
     <div>
-      <p>You've clicked {count} times!</p>
-      <div>
-        <button onClick={increaseCount}>Increase</button>
-      </div>
-      <div>
-        <button onClick={decreaseCount}>Decrease</button>
-      </div>
-      <div>
-        <button onClick={resetCount}>Reset</button>
-      </div>
+      <h1>{`Count: ${count}`}</h1>
+      <button onClick={increment}>Add</button>
+      <button onClick={decrement}>minus</button>
+      <button onClick={reset}>reset</button>
     </div>
   );
 }
-
-export default Counter;
