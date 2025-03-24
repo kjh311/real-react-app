@@ -44,3 +44,25 @@
 .red {
   background-color: red;
 }
+
+.border {
+  border: 2px solid black;
+  padding: 10px;
+  margin: 20px;
+}
+
+.light-mode {
+  background-color: #bff5ff;
+}
+
+.dark-mode {
+  background-color: #353efc;
+}
+
+.light-mode-red {
+  background-color: #f98686;
+}
+
+.dark-mode-red {
+  background-color: #700000;
+}

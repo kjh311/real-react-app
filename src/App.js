@@ -29,6 +29,7 @@ import CreateList from "./CreateList";
 import CharacterCount from "./CharacterCount";
 import RemoveItemFromList from "./RemoveItemFromList";
 import AutoCount from "./AutoCount";
+import DayNightMode from "./DayNightMode";
 
 function Home() {
   console.log("Environment:", process.env.NODE_ENV);
@@ -76,6 +77,7 @@ function App() {
         <Route path="/characterCount" element={<CharacterCount />} />
         <Route path="/removeItem" element={<RemoveItemFromList />} />
         <Route path="/autoCount" element={<AutoCount />} />
+        <Route path="/dayNight" element={<DayNightMode />} />
       </Routes>
     </div>
   );
