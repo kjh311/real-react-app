@@ -26,6 +26,7 @@ import UseRef from "./UseRef";
 import Name from "./Name";
 import CheckedHook from "./CheckedHook";
 import CreateList from "./CreateList";
+import CharacterCount from "./CharacterCount";
 
 function Home() {
   console.log("Environment:", process.env.NODE_ENV);
@@ -70,6 +71,7 @@ function App() {
         <Route path="/name" element={<Name />} />
         <Route path="/checkedHook" element={<CheckedHook />} />
         <Route path="/createList" element={<CreateList />} />
+        <Route path="/characterCount" element={<CharacterCount />} />
       </Routes>
     </div>
   );

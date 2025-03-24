@@ -37,7 +37,8 @@ export default function Navbar() {
     // { text: "Magic Cards", path: "/magicCards" },
     // { text: "UseRef", path: "/useRef" },
     { text: "Window", path: "/window" },
-    { text: "Create List", path: "/createList" },
+    { text: "Character Count", path: "/characterCount" },
+    // { text: "Create List", path: "/createList" },
     // { text: "Checked Hook", path: "/checkedHook" },
     // { text: "Name", path: "/name" },
   ];
