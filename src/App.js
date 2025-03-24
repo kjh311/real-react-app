@@ -28,6 +28,7 @@ import CheckedHook from "./CheckedHook";
 import CreateList from "./CreateList";
 import CharacterCount from "./CharacterCount";
 import RemoveItemFromList from "./RemoveItemFromList";
+import AutoCount from "./AutoCount";
 
 function Home() {
   console.log("Environment:", process.env.NODE_ENV);
@@ -74,6 +75,7 @@ function App() {
         <Route path="/createList" element={<CreateList />} />
         <Route path="/characterCount" element={<CharacterCount />} />
         <Route path="/removeItem" element={<RemoveItemFromList />} />
+        <Route path="/autoCount" element={<AutoCount />} />
       </Routes>
     </div>
   );
