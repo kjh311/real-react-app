@@ -30,6 +30,7 @@ import CharacterCount from "./CharacterCount";
 import RemoveItemFromList from "./RemoveItemFromList";
 import AutoCount from "./AutoCount";
 import DayNightMode from "./DayNightMode";
+import LocalStorageToDo from "./LocalStorageToDo";
 
 function Home() {
   console.log("Environment:", process.env.NODE_ENV);
@@ -78,6 +79,7 @@ function App() {
         <Route path="/removeItem" element={<RemoveItemFromList />} />
         <Route path="/autoCount" element={<AutoCount />} />
         <Route path="/dayNight" element={<DayNightMode />} />
+        <Route path="/local" element={<LocalStorageToDo />} />
       </Routes>
     </div>
   );

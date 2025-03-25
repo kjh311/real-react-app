@@ -38,6 +38,7 @@ export default function Navbar() {
     // { text: "UseRef", path: "/useRef" },
     { text: "Window", path: "/window" },
     { text: "Day Night", path: "/dayNight" },
+    { text: "LS To Do", path: "/local" },
     // { text: "Auto Count", path: "/autoCount" },
     // { text: "Remove Item", path: "/removeItem" },
     // { text: "Character Count", path: "/characterCount" },
