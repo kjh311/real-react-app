@@ -34,6 +34,7 @@ import LocalStorageToDo from "./LocalStorageToDo";
 import Pokemon from "./Pokemon";
 import RickAndMorty from "./RickAndMorty";
 import CountWords from "./CountWords";
+import SearchApi from "./SearchApi";
 
 function Home() {
   console.log("Environment:", process.env.NODE_ENV);
@@ -79,6 +80,7 @@ function App() {
         <Route path="/pokemon" element={<Pokemon />} />
         <Route path="/rick" element={<RickAndMorty />} />
         <Route path="/countWords" element={<CountWords />} />
+        <Route path="/searchApi" element={<SearchApi />} />
       </Routes>
     </div>
   );
