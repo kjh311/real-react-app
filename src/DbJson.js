@@ -35,6 +35,8 @@ export default function DbJson() {
       .catch((error) => {
         console.error("Error fetching posts", error);
       });
+    setPostTitle("");
+    setPostBody("");
   };
 
   //UPDATE
@@ -53,14 +55,30 @@ export default function DbJson() {
         setPosts(updatedPosts);
         setUpdateTitle("");
         setUpdateBody("");
+        setPostId("");
       })
       .catch((error) => {
         console.erro("Error Updating Post", error);
       });
   };
 
+  //DELETE
+  const handleDeleteSubmit = (e) => {
+    e.preventDefault();
+
+    axios
+      .delete(`http://localhost:5000/posts/${postId}`)
+      .then(() => {
+        // Remove the deleted post from the state
+        setPosts(posts.filter((post) => post.id !== postId));
+      })
+      .catch((error) => console.error("Error deleting post", error));
+    setPostId("");
+  };
+
   return (
     <div>
+      {/* POST */}
       <form className="card" onSubmit={handlePostSubmit}>
         <h3>Create a new Post:</h3>
         <input
@@ -70,6 +88,7 @@ export default function DbJson() {
           onChange={(e) => setPostTitle(e.target.value)}
         />
         <br />
+        <br />
         <textarea
           type="text"
           value={postBody}
@@ -77,21 +96,24 @@ export default function DbJson() {
           onChange={(e) => setPostBody(e.target.value)}
         />
         <br />
+        <br />
         <button type="submit">Submit</button>
         <br />
         <br />
       </form>
-      <br />
+      {/* <br /> */}
 
+      {/* UPDATE */}
       <form className="card" onSubmit={handleUpdateSubmit}>
         <h3>UpdatePost:</h3>
-        <br />
+        {/* <br /> */}
         <input
           type="text"
           value={updateTitle}
           placeholder="Enter a new title"
           onChange={(e) => setUpdateTitle(e.target.value)}
         />
+        <br />
         <br />
         <textarea
           type="text"
@@ -100,6 +122,7 @@ export default function DbJson() {
           onChange={(e) => setUpdateBody(e.target.value)}
         />
         <br />
+        <br />
         <input
           type="text"
           value={postId}
@@ -107,7 +130,27 @@ export default function DbJson() {
           onChange={(e) => setPostId(e.target.value)}
         />
         <br />
+        <br />
         <button type="submit">Submit</button>
+        <br />
+        <br />
+      </form>
+
+      {/* DELETE */}
+      <form className="card" onSubmit={handleDeleteSubmit}>
+        <h3>Delete Post:</h3>
+        {/* <br /> */}
+        <input
+          type="text"
+          value={postId}
+          placeholder="Enter a Post Id"
+          onChange={(e) => setPostId(e.target.value)}
+        />
+        <br />
+        <br />
+        <button type="submit">Delete</button>
+        <br />
+        <br />
       </form>
 
       <div>
