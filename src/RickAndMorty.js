@@ -46,10 +46,10 @@ export default function RickAndMorty() {
     fetchCharacter();
   }, [num]);
 
-  //   useEffect(() => {
-  //     console.log(info);
-  //     console.log(num);
-  //   }, [info, num]);
+  useEffect(() => {
+    console.log(info);
+    console.log(num);
+  }, [info, num]);
 
   return (
     <div>
@@ -67,7 +67,7 @@ export default function RickAndMorty() {
           <h1>{info.name}</h1>
           <img src={info.image} alt="charcter pic" />
           <div>
-            {num > 1 ? <button onClick={handlePrevious}>Previous</button> : ""}
+            {num > 1 && <button onClick={handlePrevious}>Previous</button>}
             <button onClick={handleNext}>Next</button>
           </div>
         </div>

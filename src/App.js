@@ -33,6 +33,7 @@ import DayNightMode from "./DayNightMode";
 import LocalStorageToDo from "./LocalStorageToDo";
 import Pokemon from "./Pokemon";
 import RickAndMorty from "./RickAndMorty";
+import CountWords from "./CountWords";
 
 function Home() {
   console.log("Environment:", process.env.NODE_ENV);
@@ -77,6 +78,7 @@ function App() {
         <Route path="/local" element={<LocalStorageToDo />} />
         <Route path="/pokemon" element={<Pokemon />} />
         <Route path="/rick" element={<RickAndMorty />} />
+        <Route path="/countWords" element={<CountWords />} />
       </Routes>
     </div>
   );

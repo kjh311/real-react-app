@@ -40,6 +40,7 @@ export default function Navbar() {
     { text: "Day Night", path: "/dayNight" },
     { text: "LS To Do", path: "/local" },
     { text: "Rick and Morty", path: "/rick" },
+    { text: "Count Words", path: "/countWords" },
     // { text: "Pokemon Cards", path: "/pokemon" },
     // { text: "Auto Count", path: "/autoCount" },
     // { text: "Remove Item", path: "/removeItem" },
