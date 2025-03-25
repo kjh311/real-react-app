@@ -31,6 +31,8 @@ import RemoveItemFromList from "./RemoveItemFromList";
 import AutoCount from "./AutoCount";
 import DayNightMode from "./DayNightMode";
 import LocalStorageToDo from "./LocalStorageToDo";
+import Pokemon from "./Pokemon";
+import RickAndMorty from "./RickAndMorty";
 
 function Home() {
   console.log("Environment:", process.env.NODE_ENV);
@@ -49,13 +51,6 @@ function App() {
       {/* <h1>React Practice</h1> */}
       <NavBar />
       <br />
-      {/* <Test /> */}
-
-      {/* <NameForm /> */}
-      {/* <CheckBox /> */}
-      {/* <Resource /> */}
-
-      {/* <CatPic /> */}
 
       <Routes>
         <Route path="/starwars" element={<StarWars />} />
@@ -80,6 +75,8 @@ function App() {
         <Route path="/autoCount" element={<AutoCount />} />
         <Route path="/dayNight" element={<DayNightMode />} />
         <Route path="/local" element={<LocalStorageToDo />} />
+        <Route path="/pokemon" element={<Pokemon />} />
+        <Route path="/rick" element={<RickAndMorty />} />
       </Routes>
     </div>
   );

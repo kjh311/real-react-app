@@ -39,6 +39,8 @@ export default function Navbar() {
     { text: "Window", path: "/window" },
     { text: "Day Night", path: "/dayNight" },
     { text: "LS To Do", path: "/local" },
+    { text: "Rick and Morty", path: "/rick" },
+    // { text: "Pokemon Cards", path: "/pokemon" },
     // { text: "Auto Count", path: "/autoCount" },
     // { text: "Remove Item", path: "/removeItem" },
     // { text: "Character Count", path: "/characterCount" },
