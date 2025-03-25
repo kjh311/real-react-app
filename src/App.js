@@ -35,6 +35,8 @@ import Pokemon from "./Pokemon";
 import RickAndMorty from "./RickAndMorty";
 import CountWords from "./CountWords";
 import SearchApi from "./SearchApi";
+import RestAPI from "./RestAPI";
+import DbJson from "./DbJson";
 
 function Home() {
   console.log("Environment:", process.env.NODE_ENV);
@@ -81,6 +83,8 @@ function App() {
         <Route path="/rick" element={<RickAndMorty />} />
         <Route path="/countWords" element={<CountWords />} />
         <Route path="/searchApi" element={<SearchApi />} />
+        <Route path="/restAPI" element={<RestAPI />} />
+        <Route path="/dbJson" element={<DbJson />} />
       </Routes>
     </div>
   );

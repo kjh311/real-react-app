@@ -38,6 +38,8 @@ export default function Navbar() {
     // { text: "UseRef", path: "/useRef" },
     { text: "Window", path: "/window" },
     { text: "Search Api", path: "/searchApi" },
+    // { text: "Rest Api", path: "/restAPI" },
+    { text: "DB Api", path: "/dbJson" },
     // { text: "Day Night", path: "/dayNight" },
     // { text: "LS To Do", path: "/local" },
     // { text: "Rick and Morty", path: "/rick" },
