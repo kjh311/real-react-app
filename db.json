@@ -1,3 +1,19 @@
 {
-  "posts": [{ "id": 1, "title": "First Post", "body": "This is my first post" }]
+  "posts": [
+    {
+      "title": "asdf",
+      "body": "asdf",
+      "id": "1"
+    },
+    {
+      "id": "cb82",
+      "title": "asdf",
+      "body": "asdf"
+    },
+    {
+      "title": "Hey You Guys!",
+      "body": "Sloth Love Chunk!",
+      "id": "2de2"
+    }
+  ]
 }
