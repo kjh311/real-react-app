@@ -4,6 +4,7 @@ import axios from "axios";
 export default function CountryAPI() {
   const [startSlice, setStartSlice] = useState(0);
   const [endSlice, setEndSlice] = useState(5);
+  const [searchTerm, setSearchTerm] = useState("");
 
   const [countries, setCountries] = useState([]);
 
@@ -24,12 +25,37 @@ export default function CountryAPI() {
     setEndSlice((prev) => prev - 5);
   };
 
+  const handleSearch = (e) => {
+    e.preventDefault();
+
+    axios
+      .get(`https://restcountries.com/v3.1/name/${searchTerm}`)
+      .then((res) => setCountries(res.data))
+      .catch((error) => console.error("Error finding Country", error));
+    setSearchTerm("");
+  };
+
   useEffect(() => {
     console.log(countries);
   }, [countries]);
 
   return (
     <div>
+      <div>
+        <form onSubmit={handleSearch} className="card">
+          <h1>Search:</h1>
+          <input
+            type="text"
+            value={searchTerm}
+            placeholder="Enter a country to search"
+            required
+            onChange={(e) => setSearchTerm(e.target.value)}
+          />
+          <br />
+          <br />
+          <button type="submit">Search</button>
+        </form>
+      </div>
       <div>
         {startSlice > 0 && (
           <button onClick={handlePreviousButton}>Previous</button>
