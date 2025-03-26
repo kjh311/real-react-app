@@ -1,0 +1,24 @@
+{
+  "products": [
+    {
+      "title": "Samsung Galaxy",
+      "price": "299.99",
+      "description": "Samsung Galaxy is Samsung Electronics' flagship line of Android smartphones and tablets. The original Samsung Galaxy smartphone debuted in 2009, and the line's first tablet, Samsung Galaxy Tab, came out the following year. Samsung Galaxy also includes internet of things (IoT) devices, such as smartwatches and Bluetooth earbuds.",
+      "image": "https://www.techtarget.com/rms/onlineimages/samsung_galaxyS22-f.jpg",
+      "id": "101"
+    },
+    {
+      "id": "81ea",
+      "title": "Fossil Men's Wade Bifold Leather Wallet",
+      "description": "A burnished design gives our black leather Wade bifold an extra dash of vintage-inspired character. Fossil leather products support responsible manufacturing via the Leather Working Group.",
+      "image": "https://fossil.scene7.com/is/image/FossilPartners/ML3882001_3?$sfcc_fos_large$"
+    },
+    {
+      "id": "9c01",
+      "title": "H&M Slim Fit Polo Shirt",
+      "description": "Slim-fit polo shirt in lightweight cotton jersey that hugs contours of the body for a fitted silhouette. Collar, button placket, short sleeves and a straight-cut hem.",
+      "image": "https://encrypted-tbn3.gstatic.com/shopping?q=tbn:ANd9GcTQu2LaqtezPwuc6Ru5EFnp1jqREJeW8nPYneTagSIV9IOga8FwzSP6D-DkCOtBzY-MSMaL8aOXD-hvdtG_u9OGCTtdAXfzwYhANvU3GYm-",
+      "price": "59.99"
+    }
+  ]
+}

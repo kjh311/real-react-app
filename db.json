@@ -1,7 +1,7 @@
 {
   "posts": [
     {
-      "title": "Hey You Guys!",
+      "title": "Goonies",
       "body": "Sloth Love Chunk!",
       "id": "2de2"
     },
@@ -9,6 +9,18 @@
       "title": "Monty Python",
       "body": "I've got a lovely bunch of coconuts!",
       "id": "5482"
+    },
+    {
+      "id": "1295",
+      "title": "Major Payne",
+      "body": "Gotta be somebody need some killin'!"
+    }
+  ],
+  "users": [
+    {
+      "name": "Kevin",
+      "age": "46",
+      "id": "101"
     }
   ]
 }

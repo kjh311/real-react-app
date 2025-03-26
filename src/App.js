@@ -37,6 +37,7 @@ import CountWords from "./CountWords";
 import SearchApi from "./SearchApi";
 import RestAPI from "./RestAPI";
 import DbJson from "./DbJson";
+import Products from "./products";
 
 function Home() {
   console.log("Environment:", process.env.NODE_ENV);
@@ -85,6 +86,7 @@ function App() {
         <Route path="/searchApi" element={<SearchApi />} />
         <Route path="/restAPI" element={<RestAPI />} />
         <Route path="/dbJson" element={<DbJson />} />
+        <Route path="/products" element={<Products />} />
       </Routes>
     </div>
   );

@@ -72,5 +72,10 @@
   width: 30vw;
   border-radius: 5px;
   margin: 10px auto;
+  padding: 10px;
   /* margin-bottom: 5px; */
+}
+
+.image {
+  max-width: 25vw;
 }

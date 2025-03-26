@@ -9,6 +9,8 @@ export default function DbJson() {
   const [updateBody, setUpdateBody] = useState("");
   const [postId, setPostId] = useState("");
 
+  const [users, setUsers] = useState([]);
+
   useEffect(() => {
     axios
       .get("http://localhost:5000/posts")
@@ -17,6 +19,15 @@ export default function DbJson() {
       })
       .catch((error) => {
         console.error("Error fetching posts", error);
+      });
+
+    axios
+      .get("http://localhost:5000/users")
+      .then((response) => {
+        setUsers(response.data);
+      })
+      .catch((error) => {
+        console.error("Error fetching users", error);
       });
   }, []);
 
@@ -125,7 +136,7 @@ export default function DbJson() {
         <br />
         <input
           type="text"
-          value={postId}
+          //   value={postId}
           placeholder="Enter a Post Id"
           onChange={(e) => setPostId(e.target.value)}
         />
@@ -142,7 +153,7 @@ export default function DbJson() {
         {/* <br /> */}
         <input
           type="text"
-          value={postId}
+          //   value={postId}
           placeholder="Enter a Post Id"
           onChange={(e) => setPostId(e.target.value)}
         />
@@ -161,6 +172,19 @@ export default function DbJson() {
               <h3>{post.title}</h3>
               <p>{post.body}</p>
               <p>id: {post.id}</p>
+            </div>
+          );
+        })}
+      </div>
+
+      <div>
+        <h1>Users:</h1>
+        {users.map((user, index) => {
+          return (
+            <div key={index} className="card">
+              <h3>Name: {user.name}</h3>
+              <p>Age: {user.age}</p>
+              <p>id: {user.id}</p>
             </div>
           );
         })}
