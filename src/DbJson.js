@@ -44,7 +44,7 @@ export default function DbJson() {
         setPosts((prev) => [...prev, response.data]);
       })
       .catch((error) => {
-        console.error("Error fetching posts", error);
+        console.error("Error posting posts", error);
       });
     setPostTitle("");
     setPostBody("");

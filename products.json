@@ -1,18 +1,11 @@
 {
   "products": [
     {
-      "title": "Doggy Poo",
-      "description": "Happy happy happy!\nJoy joy joy!",
-      "price": "999999.99",
-      "image": "https://media2.giphy.com/media/SggILpMXO7Xt6/giphy.gif?cid=6c09b9525989uaegka7ugd9lik5xvxkt6sz3tlpboizqvkai&ep=v1_gifs_search&rid=giphy.gif&ct=g",
-      "id": "8e52"
-    },
-    {
-      "title": "asdf",
+      "id": "f861",
+      "title": "asgd",
       "description": "asdf",
-      "price": "23.23",
-      "image": "https://i0.wp.com/media4.giphy.com/media/uSYQsJQWEv6O4/giphy.gif",
-      "id": "14cb"
+      "image": "https://thumbs.dreamstime.com/b/orangutan-baby-funny-face-months-old-31287963.jpg",
+      "price": "34.33"
     }
   ]
 }

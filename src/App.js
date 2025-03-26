@@ -38,6 +38,7 @@ import SearchApi from "./SearchApi";
 import RestAPI from "./RestAPI";
 import DbJson from "./DbJson";
 import Products from "./products";
+import CountryAPI from "./CountryAPI";
 
 function Home() {
   console.log("Environment:", process.env.NODE_ENV);
@@ -87,6 +88,7 @@ function App() {
         <Route path="/restAPI" element={<RestAPI />} />
         <Route path="/dbJson" element={<DbJson />} />
         <Route path="/products" element={<Products />} />
+        <Route path="/countryApi" element={<CountryAPI />} />
       </Routes>
     </div>
   );

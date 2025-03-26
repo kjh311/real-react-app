@@ -46,6 +46,7 @@ export default function Navbar() {
     // { text: "Rick and Morty", path: "/rick" },
     // { text: "Count Words", path: "/countWords" },
     // { text: "Pokemon Cards", path: "/pokemon" },
+    { text: "Country API", path: "/CountryApi" },
     // { text: "Auto Count", path: "/autoCount" },
     // { text: "Remove Item", path: "/removeItem" },
     // { text: "Character Count", path: "/characterCount" },

@@ -20,7 +20,7 @@ export default function Products() {
       .get("http://localhost:5000/products")
       .then((response) => setProducts(response.data))
       .catch((error) => {
-        console.error(error);
+        console.error("Error fetching products", error);
       });
   }, []);
 
@@ -39,7 +39,6 @@ export default function Products() {
         setProducts((prev) => [...prev, response.data]);
         console.log("product posted");
       })
-
       .catch((error) => {
         console.error("Error posting product", error);
       });
@@ -150,6 +149,7 @@ export default function Products() {
           value={updateTitle}
           placeholder="Enter a new title"
           onChange={(e) => setUpdateTitle(e.target.value)}
+          required
         />
         <br />
         <br />
@@ -158,6 +158,7 @@ export default function Products() {
           value={updateDescription}
           placeholder="Enter a new description"
           onChange={(e) => setUpdateDescription(e.target.value)}
+          required
         />
         <br />
         <br />
@@ -166,6 +167,7 @@ export default function Products() {
           value={updateImage}
           placeholder="Enter a new image"
           onChange={(e) => setUpdateImage(e.target.value)}
+          required
         />
         <br />
         <br />
@@ -174,6 +176,7 @@ export default function Products() {
           value={updatePrice}
           placeholder="Enter a new price"
           onChange={(e) => setUpdatePrice(e.target.value)}
+          required
         />
         <br />
         <br />
@@ -182,6 +185,7 @@ export default function Products() {
           value={updateId}
           placeholder="Enter an id"
           onChange={(e) => setUpdateId(e.target.value)}
+          required
         />
         <br />
         <br />
@@ -199,6 +203,7 @@ export default function Products() {
             value={deleteId}
             placeholder="Enter product id"
             onChange={(e) => setDeleteId(e.target.value)}
+            required
           />
           <br />
           <br />
@@ -207,6 +212,9 @@ export default function Products() {
           <br />
         </form>
       </div>
+
+      {products.length === 0 && "No products found"}
+
       {products.map((item, index) => {
         return (
           <div className="card" key={index}>
