@@ -48,6 +48,7 @@ export default function Navbar() {
     // { text: "Pokemon Cards", path: "/pokemon" },
     { text: "Country API", path: "/CountryApi" },
     { text: "useReducer Counter", path: "/counterUseReducer" },
+    { text: "useReducer Name", path: "/nameUseReducer" },
     // { text: "Weather API", path: "/weatherApi" },
     // { text: "Auto Count", path: "/autoCount" },
     // { text: "Remove Item", path: "/removeItem" },
