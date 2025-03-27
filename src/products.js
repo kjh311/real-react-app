@@ -92,6 +92,28 @@ export default function Products() {
     setDeleteId("");
   };
 
+  //DELETE BY ID
+  // const handleDeleteItem = (id) => {
+  //   axios
+  //     .delete(`http://localhost:5000/products/${id}`)
+  //     .then(() => {
+  //       setProducts(products.filter((product) => product.id !== id));
+  //     })
+  //     .catch((error) => {
+  //       console.error("Error deleting specific product", error);
+  //     });
+  // };
+
+  const handleDeleteItem = (id) => {
+    axios
+      .delete(`http://localhost:5000/products/${id}`)
+      .then(() => {
+        // Remove from UI
+        setProducts(products.filter((product) => product.id !== id));
+      })
+      .catch((error) => console.error("Error deleting product", error));
+  };
+
   return (
     <div>
       <div className="card">
@@ -218,6 +240,12 @@ export default function Products() {
       {products.map((item, index) => {
         return (
           <div className="card" key={index}>
+            <button
+              className="deleteButton"
+              onClick={() => handleDeleteItem(item.id)}
+            >
+              X
+            </button>
             <h1>{item.title}</h1>
             <p>{item.description}</p>
             <p>${item.price}</p>

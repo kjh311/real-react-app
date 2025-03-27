@@ -39,6 +39,7 @@ import RestAPI from "./RestAPI";
 import DbJson from "./DbJson";
 import Products from "./products";
 import CountryAPI from "./CountryAPI";
+// import WeatherAPI from "./WeatherAPI";
 
 function Home() {
   console.log("Environment:", process.env.NODE_ENV);
@@ -89,6 +90,7 @@ function App() {
         <Route path="/dbJson" element={<DbJson />} />
         <Route path="/products" element={<Products />} />
         <Route path="/countryApi" element={<CountryAPI />} />
+        {/* <Route path="/weatherApi" element={<WeatherAPI />} /> */}
       </Routes>
     </div>
   );

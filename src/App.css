@@ -74,8 +74,17 @@
   margin: 10px auto;
   padding: 10px;
   /* margin-bottom: 5px; */
+  position: relative;
 }
 
 .image {
   max-width: 25vw;
+}
+
+.deleteButton {
+  border: 2px solid black;
+  border-radius: 50%;
+  padding: 10px;
+  right: 5px;
+  position: absolute;
 }
