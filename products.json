@@ -1,3 +1,11 @@
 {
-  "products": []
+  "products": [
+    {
+      "id": "0e17",
+      "title": "asdfas",
+      "description": "asf",
+      "image": "https://www.shipbob.com/wp-content/uploads/2022/06/PRODUCT-RANGE.jpg",
+      "price": "34234234"
+    }
+  ]
 }

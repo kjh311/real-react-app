@@ -47,6 +47,7 @@ export default function Navbar() {
     // { text: "Count Words", path: "/countWords" },
     // { text: "Pokemon Cards", path: "/pokemon" },
     { text: "Country API", path: "/CountryApi" },
+    { text: "useReducer Counter", path: "/counterUseReducer" },
     // { text: "Weather API", path: "/weatherApi" },
     // { text: "Auto Count", path: "/autoCount" },
     // { text: "Remove Item", path: "/removeItem" },

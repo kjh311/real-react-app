@@ -93,25 +93,17 @@ export default function Products() {
   };
 
   //DELETE BY ID
-  // const handleDeleteItem = (id) => {
-  //   axios
-  //     .delete(`http://localhost:5000/products/${id}`)
-  //     .then(() => {
-  //       setProducts(products.filter((product) => product.id !== id));
-  //     })
-  //     .catch((error) => {
-  //       console.error("Error deleting specific product", error);
-  //     });
-  // };
-
   const handleDeleteItem = (id) => {
-    axios
-      .delete(`http://localhost:5000/products/${id}`)
-      .then(() => {
-        // Remove from UI
-        setProducts(products.filter((product) => product.id !== id));
-      })
-      .catch((error) => console.error("Error deleting product", error));
+    if (window.confirm("Delete this item?")) {
+      axios
+        .delete(`http://localhost:5000/products/${id}`)
+        .then(() => {
+          // Remove from UI
+          setProducts(products.filter((product) => product.id !== id));
+          console.log("Product deleted", id);
+        })
+        .catch((error) => console.error("Error deleting product", error));
+    }
   };
 
   return (
@@ -248,7 +240,7 @@ export default function Products() {
             </button>
             <h1>{item.title}</h1>
             <p>{item.description}</p>
-            <p>${item.price}</p>
+            <p>${Number(item.price).toLocaleString()}</p>
             <p>id: {item.id}</p>
             <img src={item.image} alt={item.title} className="image" />
           </div>
