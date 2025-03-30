@@ -42,6 +42,7 @@ import CountryAPI from "./CountryAPI";
 // import WeatherAPI from "./WeatherAPI";
 import CounterUseReducer from "./CounterUseReducer";
 import NameUseReducer from "./NameUseReducer";
+import TailWindStyle from "./TailWindStyling";
 
 function Home() {
   console.log("Environment:", process.env.NODE_ENV);
@@ -50,6 +51,7 @@ function Home() {
     <div>
       {/* <h1>Home</h1> */}
       <p>React Practice</p>
+      {/* <h1 className="text-3xl font-bold underline">Hello world!</h1> */}
     </div>
   );
 }
@@ -94,6 +96,7 @@ function App() {
         <Route path="/countryApi" element={<CountryAPI />} />
         <Route path="/counterUseReducer" element={<CounterUseReducer />} />
         <Route path="/nameUseReducer" element={<NameUseReducer />} />
+        <Route path="/tailWind" element={<TailWindStyle />} />
         {/* <Route path="/weatherApi" element={<WeatherAPI />} /> */}
       </Routes>
     </div>
