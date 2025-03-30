@@ -45,6 +45,7 @@ export default function CountryAPI() {
         <form onSubmit={handleSearch} className="card">
           <h1>Search:</h1>
           <input
+            className="border rounded "
             type="text"
             value={searchTerm}
             placeholder="Enter a country to search"
@@ -53,22 +54,40 @@ export default function CountryAPI() {
           />
           <br />
           <br />
-          <button type="submit">Search</button>
+          <button
+            className="border rounded p-4 bg-blue-500 text-white"
+            type="submit"
+          >
+            Search
+          </button>
         </form>
       </div>
       <div>
         {startSlice > 0 && (
-          <button onClick={handlePreviousButton}>Previous</button>
+          <button
+            className="p-2 text-white bg-blue-500 border rounded"
+            onClick={handlePreviousButton}
+          >
+            Previous
+          </button>
         )}
-        <button onClick={handleNextButton}>Next</button>
+        <button
+          className="p-2 text-white bg-blue-500 border rounded"
+          onClick={handleNextButton}
+        >
+          Next
+        </button>
       </div>
       {countries.map((country, index) => {
         return (
-          <div className="card" key={index}>
-            <h1>{country.name.common}</h1>
+          <div
+            className="p-4 rounded shadow max-w-md border mx-auto"
+            key={index}
+          >
+            <h1 className="font-bold text-xl mb-2">{country.name.common}</h1>
             <p>Capital: {country.capital}</p>
             <img
-              className="image"
+              className="image mx-auto"
               src={country.flags.png}
               alt={country.name.common}
             />
