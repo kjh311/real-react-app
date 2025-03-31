@@ -50,6 +50,7 @@ export default function Navbar() {
     { text: "useReducer Counter", path: "/counterUseReducer" },
     { text: "useReducer Name", path: "/nameUseReducer" },
     { text: "TailWind", path: "/tailWind" },
+    { text: "Shopping Cart", path: "/shoppingCart" },
     // { text: "Weather API", path: "/weatherApi" },
     // { text: "Auto Count", path: "/autoCount" },
     // { text: "Remove Item", path: "/removeItem" },
