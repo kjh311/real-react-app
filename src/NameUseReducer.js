@@ -6,8 +6,10 @@ function reducer(state, action) {
   switch (action.type) {
     case "David":
       return { name: "David" };
-    case "Jeff":
-      return { name: "Jeff" };
+    case "Eric":
+      return { name: "Eric" };
+    case "George":
+      return { name: "George" };
     case "reset":
       return initialState;
     default:
@@ -21,9 +23,38 @@ export default function NameUseReducer() {
   return (
     <div>
       <h1>{state.name}</h1>
-      <button onClick={() => dispatch({ type: "David" })}>David</button>
-      <button onClick={() => dispatch({ type: "Jeff" })}>Jeff</button>
-      <button onClick={() => dispatch({ type: "reset" })}>Reset</button>
+      <div>
+        <button
+          className="border rounded p-4 bg-blue-500 m-2 text-white"
+          onClick={() => dispatch({ type: "David" })}
+        >
+          David
+        </button>
+      </div>
+      <div>
+        <button
+          className="border rounded p-4 bg-blue-500 m-2 text-white"
+          onClick={() => dispatch({ type: "Eric" })}
+        >
+          Eric
+        </button>
+      </div>
+      <div>
+        <button
+          className="border rounded p-4 bg-blue-500 m-2 text-white"
+          onClick={() => dispatch({ type: "George" })}
+        >
+          George
+        </button>
+      </div>
+      <div>
+        <button
+          className="border rounded p-4 bg-blue-500 m-2 text-white"
+          onClick={() => dispatch({ type: "reset" })}
+        >
+          Reset
+        </button>
+      </div>
     </div>
   );
 }
