@@ -44,6 +44,7 @@ import CounterUseReducer from "./CounterUseReducer";
 import NameUseReducer from "./NameUseReducer";
 import TailWindStyle from "./TailWindStyling";
 import ShoppingCart from "./ShoppingCart";
+import DrinkRecipes from "./DrinkRecipes";
 
 function Home() {
   console.log("Environment:", process.env.NODE_ENV);
@@ -99,6 +100,7 @@ function App() {
         <Route path="/nameUseReducer" element={<NameUseReducer />} />
         <Route path="/tailWind" element={<TailWindStyle />} />
         <Route path="/shoppingCart" element={<ShoppingCart />} />
+        <Route path="/drinkRecipes" element={<DrinkRecipes />} />
         {/* <Route path="/weatherApi" element={<WeatherAPI />} /> */}
       </Routes>
     </div>

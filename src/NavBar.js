@@ -51,6 +51,7 @@ export default function Navbar() {
     { text: "useReducer Name", path: "/nameUseReducer" },
     { text: "TailWind", path: "/tailWind" },
     { text: "Shopping Cart", path: "/shoppingCart" },
+    { text: "Drinks", path: "/drinkRecipes" },
     // { text: "Weather API", path: "/weatherApi" },
     // { text: "Auto Count", path: "/autoCount" },
     // { text: "Remove Item", path: "/removeItem" },
