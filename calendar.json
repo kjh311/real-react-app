@@ -1,0 +1,66 @@
+{
+  "habits": [
+    {
+      "id": 1,
+      "name": "Exercise",
+      "calendar": [
+        {
+          "date": "2025-03-01",
+          "count": 1
+        },
+        {
+          "date": "2025-04-01",
+          "count": 2
+        },
+        {
+          "date": "2025-04-02",
+          "count": 7
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "name": "Read",
+      "calendar": [
+        {
+          "date": "2025-04-01",
+          "count": 2
+        },
+        {
+          "date": "2025-04-02",
+          "count": 6
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "name": "Meditation",
+      "calendar": [
+        {
+          "date": "2025-03-10",
+          "count": 3
+        }
+      ]
+    },
+    {
+      "id": "853c",
+      "name": "New Habit 4",
+      "calendar": [
+        {
+          "date": "2025-04-01",
+          "count": 10
+        }
+      ]
+    },
+    {
+      "id": "5586",
+      "name": "New Habit 5",
+      "calendar": [
+        {
+          "date": "2025-04-01",
+          "count": 16
+        }
+      ]
+    }
+  ]
+}
