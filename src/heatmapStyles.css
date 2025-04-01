@@ -1,0 +1,41 @@
+.color-scale-1 {
+  fill: #f0f7c8;
+}
+.color-scale-2 {
+  fill: #d6e685;
+}
+.color-scale-3 {
+  fill: #bcf990;
+}
+.color-scale-4 {
+  fill: #8cc665;
+}
+.color-scale-5 {
+  fill: #65b22a;
+}
+.color-scale-6 {
+  fill: #44a340;
+}
+.color-scale-7 {
+  fill: #2b9b25;
+}
+.color-scale-8 {
+  fill: #1f821a;
+}
+.color-scale-9 {
+  fill: #186614;
+}
+.color-scale-10 {
+  fill: #104c0d;
+}
+.color-empty {
+  fill: #ebedf0;
+}
+
+.calendar {
+  width: 70vw;
+  margin: 0 auto;
+  border: 2px solid black;
+  border-radius: 10px;
+  padding: 10px;
+}
