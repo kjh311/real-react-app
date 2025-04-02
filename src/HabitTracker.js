@@ -32,7 +32,7 @@ export default function HabitTracker() {
     if (!newHabit.trim()) return;
 
     const habitData = {
-      name: newHabit,
+      name: newHabit.toUpperCase(),
       calendar: [],
     };
 
@@ -130,20 +130,21 @@ export default function HabitTracker() {
     return maxStreak;
   };
 
+  //Total count of habits performed
   const calculateTotalCount = (calendar) => {
     // Sum up the 'count' values from the calendar entries
     return calendar.reduce((total, entry) => total + entry.count, 0);
   };
 
   return (
-    <div>
+    <div className=" ">
       <h1 className="font-bold text-xl">Habit Tracker</h1>
       <form onSubmit={addNewHabit}>
         <input
           type="text"
           placeholder="Enter new Habit"
           value={newHabit}
-          className="border rounded p-2 m-2"
+          className="border rounded p-2"
           onChange={(e) => setNewHabit(e.target.value)}
         />
         <button
@@ -155,9 +156,9 @@ export default function HabitTracker() {
       </form>
 
       {habits.map((habit) => (
-        <div key={habit.id} className="habit-container calendar">
+        <div key={habit.id} className="habit-container calendar bg-blue-200">
           <button
-            className="deleteButton"
+            className="deleteButton bg-red-300 hover:bg-red-500"
             onClick={() => deleteHabit(habit.id)}
           >
             X
@@ -185,14 +186,16 @@ export default function HabitTracker() {
             endDate={new Date()}
             values={habit.calendar}
             classForValue={(value) =>
-              !value ? "color-empty" : `color-scale-${value.count}`
+              !value
+                ? "color-empty"
+                : `color-scale-${value.count} border-square`
             }
           />
           <button
-            className="border rounded bg-blue-200 hover:bg-blue-500 p-2 m-2 hover:text-white"
+            className="border rounded bg-blue-300 hover:bg-blue-500 p-2 m-2 hover:text-white"
             onClick={() => handleIncrement(habit.id)}
           >
-            +1 for Today
+            I did this today!
           </button>
         </div>
       ))}
