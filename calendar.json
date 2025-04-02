@@ -1,4 +1,10 @@
 {
+  "user": {
+    "item": {
+      "user": ""
+    },
+    "user": "KEvin"
+  },
   "habits": [
     {
       "id": "028c",
@@ -35,6 +41,16 @@
     {
       "id": "1ef1",
       "name": "WALK",
+      "calendar": [
+        {
+          "date": "2025-04-02",
+          "count": 9
+        }
+      ]
+    },
+    {
+      "id": "1d0d",
+      "name": "SDFHSDFGSDF",
       "calendar": [
         {
           "date": "2025-04-02",

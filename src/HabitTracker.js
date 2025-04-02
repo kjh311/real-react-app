@@ -11,6 +11,8 @@ const today = new Date().toISOString().split("T")[0]; // Format YYYY-MM-DD
 export default function HabitTracker() {
   const [habits, setHabits] = useState([]);
   const [newHabit, setNewHabit] = useState("");
+  const [name, setName] = useState([]);
+  const [nameInput, setNameInput] = useState("");
 
   // Fetch habits from backend
   useEffect(() => {
@@ -26,7 +28,28 @@ export default function HabitTracker() {
         )
       )
       .catch((err) => console.error("Error fetching habits", err));
+
+    //get user name
+    // axios
+    //   .get(`http://localhost:5000/user`)
+    //   .then((res) => setName(res.data.user))
+    //   .catch((error) => console.error("Error fetching name", error));
+    // //   setName('')
+    axios
+      .get("http://localhost:5000/user")
+      .then((res) => {
+        if (res.data && res.data.user) {
+          setName(res.data.user.trim() !== "" ? res.data.user : null); // Avoid empty string
+        } else {
+          setName(null); // Ensure it remains null if no user field exists
+        }
+      })
+      .catch((error) => console.error("Error fetching name", error));
   }, []);
+
+  //   useEffect(() => {
+  //     console.log(name);
+  //   }, [name]);
 
   // Add a new habit
   const addNewHabit = (e) => {
@@ -138,9 +161,43 @@ export default function HabitTracker() {
     return calendar.reduce((total, entry) => total + entry.count, 0);
   };
 
+  // Add user name
+  const addUserName = (e) => {
+    e.preventDefault();
+    if (!nameInput.trim()) return;
+
+    axios
+      .patch("http://localhost:5000/user", { user: nameInput }) // Save name in DB
+      .then(() => {
+        setName(nameInput); // Update UI with new name
+      })
+      .catch((error) => console.error("Error posting name", error));
+
+    setNameInput("");
+  };
+
   return (
     <div className=" ">
+      {/* Show welcome message only if name is defined (exists in DB) */}
+      {name && <h1>Welcome, {name}!</h1>}
+
       <h1 className="font-bold text-xl">Habit Tracker</h1>
+
+      {/* Show input form only if no name is set (either null or undefined) */}
+      {name === null && (
+        <>
+          <h1>Welcome. Please enter your name:</h1>
+          <form onSubmit={addUserName}>
+            <input
+              type="text"
+              placeholder="Enter name"
+              className="p-2 m-2 border rounded"
+              onChange={(e) => setNameInput(e.target.value)}
+            />
+            <button type="submit">Submit</button>
+          </form>
+        </>
+      )}
       <form onSubmit={addNewHabit}>
         <input
           type="text"
@@ -181,7 +238,9 @@ export default function HabitTracker() {
           )}
 
           {calculateTotalCount(habit.calendar) > 0 ? (
-            <p>Total Count: {calculateTotalCount(habit.calendar)} times</p>
+            <p className="">
+              Total Count: {calculateTotalCount(habit.calendar)} times
+            </p>
           ) : (
             ""
           )}
@@ -193,12 +252,14 @@ export default function HabitTracker() {
             endDate={new Date(today)} // Ensure it ends exactly on today
             values={habit.calendar}
             classForValue={(value) =>
-              !value ? "color-empty" : `color-scale-${value.count}`
+              !value
+                ? "color-empty"
+                : `color-scale-${value.count} border-square`
             }
           />
 
           <button
-            className="border rounded bg-blue-300 hover:bg-blue-500 p-2 m-2 hover:text-white"
+            className="border rounded bg-red-300 hover:bg-red-500 p-2 m-2 hover:text-white text-center"
             onClick={() => handleIncrement(habit.id)}
           >
             I did this today!
