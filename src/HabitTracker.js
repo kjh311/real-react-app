@@ -130,9 +130,14 @@ export default function HabitTracker() {
     return maxStreak;
   };
 
+  const calculateTotalCount = (calendar) => {
+    // Sum up the 'count' values from the calendar entries
+    return calendar.reduce((total, entry) => total + entry.count, 0);
+  };
+
   return (
     <div>
-      <h1>Habit Tracker</h1>
+      <h1 className="font-bold text-xl">Habit Tracker</h1>
       <form onSubmit={addNewHabit}>
         <input
           type="text"
@@ -157,7 +162,7 @@ export default function HabitTracker() {
           >
             X
           </button>
-          <h2>{habit.name}</h2>
+          <h2 className="font-bold text-xl underline">{habit.name}</h2>
 
           {/* STREAK */}
           {calculateStreak(habit.calendar) > 1 ? (
@@ -170,7 +175,9 @@ export default function HabitTracker() {
           ) : (
             ""
           )}
-          {/* Display the streak */}
+
+          <p>Total Count: {calculateTotalCount(habit.calendar)} times</p>
+
           <CalendarHeatmap
             startDate={
               new Date(today.split("-")[0], new Date().getMonth() - 12, 1)
