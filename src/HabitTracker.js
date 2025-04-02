@@ -32,15 +32,14 @@ export default function HabitTracker() {
     if (!newHabit.trim()) return;
 
     const habitData = {
-      id: habits.length + 1,
       name: newHabit,
-      calendar: [], // Ensure a fresh calendar array
+      calendar: [],
     };
 
     axios
       .post("http://localhost:5000/habits", habitData)
       .then((res) => {
-        setHabits([...habits, res.data]);
+        setHabits((prev) => [...prev, res.data]); // Use backend ID
         setNewHabit("");
       })
       .catch((err) => console.error("Error adding habit", err));
@@ -78,6 +77,22 @@ export default function HabitTracker() {
     );
   };
 
+  // Delete Habit
+  const deleteHabit = (id) => {
+    if (window.confirm("Delete this habit???")) {
+      axios
+        .delete(`http://localhost:5000/habits/${id}`)
+        .then(() => {
+          setHabits((prevHabits) =>
+            prevHabits.filter((habit) => habit.id !== id)
+          );
+
+          console.log(`Habit ${id} deleted`);
+        })
+        .catch((error) => console.error("Error deleting habit", error));
+    }
+  };
+
   return (
     <div>
       <h1>Habit Tracker</h1>
@@ -99,6 +114,12 @@ export default function HabitTracker() {
 
       {habits.map((habit) => (
         <div key={habit.id} className="habit-container calendar">
+          <button
+            className="deleteButton"
+            onClick={() => deleteHabit(habit.id)}
+          >
+            X
+          </button>
           <h2>{habit.name}</h2>
           <CalendarHeatmap
             startDate={
