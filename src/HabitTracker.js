@@ -3,6 +3,8 @@ import CalendarHeatmap from "react-calendar-heatmap";
 import "react-calendar-heatmap/dist/styles.css";
 import axios from "axios";
 import "./heatmapStyles.css";
+import CloseIcon from "@mui/icons-material/Close";
+import { IconButton } from "@mui/material";
 
 const today = new Date().toISOString().split("T")[0]; // Format YYYY-MM-DD
 
@@ -157,12 +159,13 @@ export default function HabitTracker() {
 
       {habits.map((habit) => (
         <div key={habit.id} className="habit-container calendar bg-blue-200">
-          <button
-            className="deleteButton bg-red-300 hover:bg-red-500"
+          <IconButton
+            className=" float-right"
+            aria-label="close"
             onClick={() => deleteHabit(habit.id)}
           >
-            X
-          </button>
+            <CloseIcon fontSize="large" style={{ color: "red" }} />
+          </IconButton>
           <h2 className="font-bold text-xl underline">{habit.name}</h2>
 
           {/* STREAK */}
@@ -177,20 +180,23 @@ export default function HabitTracker() {
             ""
           )}
 
-          <p>Total Count: {calculateTotalCount(habit.calendar)} times</p>
+          {calculateTotalCount(habit.calendar) > 0 ? (
+            <p>Total Count: {calculateTotalCount(habit.calendar)} times</p>
+          ) : (
+            ""
+          )}
 
           <CalendarHeatmap
             startDate={
               new Date(today.split("-")[0], new Date().getMonth() - 12, 1)
             }
-            endDate={new Date()}
+            endDate={new Date(today)} // Ensure it ends exactly on today
             values={habit.calendar}
             classForValue={(value) =>
-              !value
-                ? "color-empty"
-                : `color-scale-${value.count} border-square`
+              !value ? "color-empty" : `color-scale-${value.count}`
             }
           />
+
           <button
             className="border rounded bg-blue-300 hover:bg-blue-500 p-2 m-2 hover:text-white"
             onClick={() => handleIncrement(habit.id)}

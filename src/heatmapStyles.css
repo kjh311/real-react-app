@@ -37,6 +37,11 @@
   fill: black;
 }
 
+/* .css-uks7c6-MuiSvgIcon-root {
+  position: absolute !important;
+  margin-right: 10px !important;
+} */
+
 .border-square {
   /* border: 5px solid black !important; */
   border: 1px solid #ccc; /* Outer border */
