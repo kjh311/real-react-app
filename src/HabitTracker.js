@@ -93,6 +93,43 @@ export default function HabitTracker() {
     }
   };
 
+  //check habit streak
+  const calculateStreak = (calendar) => {
+    if (!calendar || calendar.length === 0) return 0;
+
+    // Sort calendar entries by date
+    const sortedCalendar = calendar
+      .map((entry) => ({
+        ...entry,
+        date: new Date(entry.date), // Convert date string to Date object
+      }))
+      .sort((a, b) => a.date - b.date); // Sort by date in ascending order
+
+    let streak = 1; // Minimum streak is 1 if there's at least one habit entry
+    let maxStreak = 1; // Max streak initialized to 1
+
+    // Iterate through the calendar and check for consecutive days
+    for (let i = 1; i < sortedCalendar.length; i++) {
+      const prevDate = sortedCalendar[i - 1].date;
+      const currentDate = sortedCalendar[i].date;
+
+      // Check if the current date is the next day
+      const nextDay = new Date(prevDate);
+      nextDay.setDate(prevDate.getDate() + 1);
+
+      if (currentDate.getTime() === nextDay.getTime()) {
+        streak++; // Increment streak if consecutive day
+      } else {
+        streak = 1; // Reset streak if not consecutive
+      }
+
+      // Update max streak
+      maxStreak = Math.max(maxStreak, streak);
+    }
+
+    return maxStreak;
+  };
+
   return (
     <div>
       <h1>Habit Tracker</h1>
@@ -105,7 +142,7 @@ export default function HabitTracker() {
           onChange={(e) => setNewHabit(e.target.value)}
         />
         <button
-          className="border rounded bg-red-500 hover:bg-red-700 p-2 m-2"
+          className="border rounded bg-red-500 hover:bg-red-700 p-2 m-2 hover:text-white"
           type="submit"
         >
           Add Habit
@@ -121,6 +158,19 @@ export default function HabitTracker() {
             X
           </button>
           <h2>{habit.name}</h2>
+
+          {/* STREAK */}
+          {calculateStreak(habit.calendar) > 1 ? (
+            <p>Streak: {calculateStreak(habit.calendar)} days!! </p>
+          ) : (
+            ""
+          )}
+          {calculateStreak(habit.calendar) === 1 ? (
+            <p>Streak: {calculateStreak(habit.calendar)} day </p>
+          ) : (
+            ""
+          )}
+          {/* Display the streak */}
           <CalendarHeatmap
             startDate={
               new Date(today.split("-")[0], new Date().getMonth() - 12, 1)
@@ -131,7 +181,10 @@ export default function HabitTracker() {
               !value ? "color-empty" : `color-scale-${value.count}`
             }
           />
-          <button onClick={() => handleIncrement(habit.id)}>
+          <button
+            className="border rounded bg-blue-200 hover:bg-blue-500 p-2 m-2 hover:text-white"
+            onClick={() => handleIncrement(habit.id)}
+          >
             +1 for Today
           </button>
         </div>
