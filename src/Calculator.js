@@ -1,18 +1,16 @@
 import { useState, useEffect } from "react";
 
 export default function Calculator() {
-  const [x, setX] = useState(NaN);
-  const [y, setY] = useState(NaN);
-  const [outcome, setOutcome] = useState(NaN);
+  const [x, setX] = useState("");
+  const [y, setY] = useState("");
+  const [outcome, setOutcome] = useState(null);
   const [error, setError] = useState(false);
 
   useEffect(() => {
-    if (x !== 0 || y !== 0) {
-      setError(false);
+    if (x && y && !isNaN(x) && !isNaN(y)) {
+      setError(false); // Clear any previous errors
     }
-    setX(NaN);
-    setY(NaN);
-  }, [outcome]);
+  }, [x, y]);
 
   function add(x, y) {
     setOutcome(x + y);
@@ -27,9 +25,9 @@ export default function Calculator() {
   }
 
   function divide(x, y) {
-    if (x === 0 || y === 0) {
+    if (y === 0 || x === 0) {
       setError(true);
-      setOutcome(NaN);
+      setOutcome(null);
     } else {
       setOutcome(x / y);
       setError(false);
@@ -37,7 +35,11 @@ export default function Calculator() {
   }
 
   function operation(x, y, callback) {
-    return callback(parseInt(x), parseInt(y));
+    if (!isNaN(x) && !isNaN(y)) {
+      callback(parseFloat(x), parseFloat(y));
+    } else {
+      setError(true);
+    }
   }
 
   return (
@@ -46,21 +48,19 @@ export default function Calculator() {
         <input
           type="number"
           value={x}
-          placeholder="enter 1st number"
+          placeholder="Enter 1st number"
           className="p-4 m-2 border rounded"
           onChange={(e) => setX(e.target.value)}
         />
-        {/* {x} */}
       </div>
       <div>
         <input
           type="number"
           value={y}
-          placeholder="enter 2nd number"
+          placeholder="Enter 2nd number"
           className="p-4 m-2 border rounded"
           onChange={(e) => setY(e.target.value)}
         />
-        {/* {y} */}
       </div>
       <div>
         <button
@@ -69,24 +69,18 @@ export default function Calculator() {
         >
           Add
         </button>
-      </div>
-      <div>
         <button
           className="p-2 m-2 border rounded bg-blue-200 hover:bg-blue-500"
           onClick={() => operation(x, y, subtract)}
         >
           Subtract
         </button>
-      </div>
-      <div>
         <button
           className="p-2 m-2 border rounded bg-blue-200 hover:bg-blue-500"
           onClick={() => operation(x, y, multiply)}
         >
           Multiply
         </button>
-      </div>
-      <div>
         <button
           className="p-2 m-2 border rounded bg-blue-200 hover:bg-blue-500"
           onClick={() => operation(x, y, divide)}
@@ -94,8 +88,13 @@ export default function Calculator() {
           Divide
         </button>
       </div>
-      {outcome}
-      <div>{error && "Can't divide by 0"}</div>
+
+      <div>
+        {outcome !== null && !error && <h2>Result: {outcome}</h2>}
+        {error && (
+          <div className="text-red-500">Can't divide by 0 or invalid input</div>
+        )}
+      </div>
     </div>
   );
 }

@@ -1,0 +1,46 @@
+{
+  "categories": [
+    {
+      "name": "HouseHold Chores",
+      "id": "028c",
+      "tasks": [
+        {
+          "task": "Take out the garbage",
+          "completed": "false",
+          "id": "1ef1"
+        },
+        {
+          "task": "Do the laundry",
+          "completed": "false",
+          "id": "1"
+        },
+        {
+          "task": "Feed the cat",
+          "completed": "false",
+          "id": "2"
+        }
+      ]
+    },
+    {
+      "name": "Work Chores",
+      "id": "1d0d",
+      "tasks": [
+        {
+          "task": "Give file to boss",
+          "completed": "false",
+          "id": "3"
+        },
+        {
+          "task": "save the PDF",
+          "completed": "false",
+          "id": "4"
+        },
+        {
+          "task": "Call the manager",
+          "completed": "false",
+          "id": "5"
+        }
+      ]
+    }
+  ]
+}

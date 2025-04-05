@@ -55,6 +55,7 @@ export default function Navbar() {
     { text: "To Do List", path: "/todo" },
     { text: "Timer", path: "/timer" },
     { text: "Character Counter", path: "/characterCounter" },
+    { text: "Category ToDo", path: "/categoryToDoList" },
     // { text: "Drinks", path: "/drinkRecipes" },
     // { text: "Weather API", path: "/weatherApi" },
     // { text: "Auto Count", path: "/autoCount" },
