@@ -46,6 +46,7 @@ import TailWindStyle from "./TailWindStyling";
 import ShoppingCart from "./ShoppingCart";
 import DrinkRecipes from "./DrinkRecipes";
 import HabitTracker from "./HabitTracker";
+import ToDo from "./ToDo";
 
 function Home() {
   console.log("Environment:", process.env.NODE_ENV);
@@ -103,6 +104,7 @@ function App() {
         <Route path="/shoppingCart" element={<ShoppingCart />} />
         <Route path="/drinkRecipes" element={<DrinkRecipes />} />
         <Route path="/habitTracker" element={<HabitTracker />} />
+        <Route path="/todo" element={<ToDo />} />
         {/* <Route path="/weatherApi" element={<WeatherAPI />} /> */}
       </Routes>
     </div>
