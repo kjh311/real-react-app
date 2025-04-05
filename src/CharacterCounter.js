@@ -10,7 +10,22 @@ export default function CharacterCounter() {
 
   return (
     <div>
-      <h1>Character Count: {count} / 200</h1>
+      <h1 className={count > 180 ? "text-red-600 font-bold" : ""}>
+        Character Count: {count} / 200
+      </h1>
+      {count === 200 && (
+        <div>
+          <p className="text-red-500 font-semibold">
+            ⚠️ Character limit reached!
+          </p>
+          <button
+            onClick={() => setInput("")}
+            className="border rounded p-2 m-2 bg-blue-200 hover:bg-blue-500"
+          >
+            Clear Text
+          </button>
+        </div>
+      )}
       <br />
       <br />
       <textarea

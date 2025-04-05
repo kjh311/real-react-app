@@ -1,87 +1,101 @@
-import React, { useState } from "react";
+import { useState, useEffect } from "react";
 
 export default function Calculator() {
-  const [numA, setNumA] = useState("");
-  const [numB, setNumB] = useState("");
-  const [addResult, setAddResult] = useState(null);
-  const [subtractResult, setSubtractResult] = useState(null);
+  const [x, setX] = useState(NaN);
+  const [y, setY] = useState(NaN);
+  const [outcome, setOutcome] = useState(NaN);
+  const [error, setError] = useState(false);
 
-  function handleA(e) {
-    setNumA(e.target.value);
-  }
-
-  function handleB(e) {
-    setNumB(e.target.value);
-  }
-
-  function add(numA, numB) {
-    return numA + numB;
-  }
-
-  function subtract(numA, numB) {
-    return numA - numB;
-  }
-
-  function multiply(numA, numB) {
-    return numA * numB;
-  }
-
-  function divide(numA, numB) {
-    return numA / numB;
-  }
-
-  function operation(numA, numB, callback) {
-    return callback(numA, numB);
-  }
-
-  function handleAddSubmit() {
-    const a = parseFloat(numA);
-    const b = parseFloat(numB);
-    if (isNaN(a) || isNaN(b)) {
-      alert("Please enter valid numbers.");
-      return;
+  useEffect(() => {
+    if (x !== 0 || y !== 0) {
+      setError(false);
     }
-    const additionResult = operation(a, b, add);
-    setAddResult(additionResult);
-    console.log("Addition Result:", additionResult);
+    setX(NaN);
+    setY(NaN);
+  }, [outcome]);
+
+  function add(x, y) {
+    setOutcome(x + y);
   }
 
-  function handleSubtractionSubmit() {
-    const a = parseFloat(numA);
-    const b = parseFloat(numB);
-    if (isNaN(a) || isNaN(b)) {
-      alert("Please enter valid numbers.");
-      return;
+  function subtract(x, y) {
+    setOutcome(x - y);
+  }
+
+  function multiply(x, y) {
+    setOutcome(x * y);
+  }
+
+  function divide(x, y) {
+    if (x === 0 || y === 0) {
+      setError(true);
+      setOutcome(NaN);
+    } else {
+      setOutcome(x / y);
+      setError(false);
     }
-    const subtractionResult = operation(a, b, subtract);
-    setSubtractResult(subtractionResult);
-    // setSubtractResult(null);
-    console.log("Subtraction Result:", subtractionResult);
+  }
+
+  function operation(x, y, callback) {
+    return callback(parseInt(x), parseInt(y));
   }
 
   return (
     <div>
-      <h1>Calculator</h1>
-      <input
-        type="number"
-        value={numA}
-        onChange={handleA}
-        placeholder="Enter value A"
-      />
-      <input
-        type="number"
-        value={numB}
-        onChange={handleB}
-        placeholder="Enter value B"
-      />
       <div>
-        <button onClick={handleAddSubmit}>Add</button>
-        {addResult !== null && <p>Result: {addResult}</p>}
+        <input
+          type="number"
+          value={x}
+          placeholder="enter 1st number"
+          className="p-4 m-2 border rounded"
+          onChange={(e) => setX(e.target.value)}
+        />
+        {/* {x} */}
       </div>
       <div>
-        <button onClick={handleSubtractionSubmit}>Subtract</button>
-        {subtractResult !== null && <p>Result: {subtractResult}</p>}
+        <input
+          type="number"
+          value={y}
+          placeholder="enter 2nd number"
+          className="p-4 m-2 border rounded"
+          onChange={(e) => setY(e.target.value)}
+        />
+        {/* {y} */}
       </div>
+      <div>
+        <button
+          className="p-2 m-2 border rounded bg-blue-200 hover:bg-blue-500"
+          onClick={() => operation(x, y, add)}
+        >
+          Add
+        </button>
+      </div>
+      <div>
+        <button
+          className="p-2 m-2 border rounded bg-blue-200 hover:bg-blue-500"
+          onClick={() => operation(x, y, subtract)}
+        >
+          Subtract
+        </button>
+      </div>
+      <div>
+        <button
+          className="p-2 m-2 border rounded bg-blue-200 hover:bg-blue-500"
+          onClick={() => operation(x, y, multiply)}
+        >
+          Multiply
+        </button>
+      </div>
+      <div>
+        <button
+          className="p-2 m-2 border rounded bg-blue-200 hover:bg-blue-500"
+          onClick={() => operation(x, y, divide)}
+        >
+          Divide
+        </button>
+      </div>
+      {outcome}
+      <div>{error && "Can't divide by 0"}</div>
     </div>
   );
 }

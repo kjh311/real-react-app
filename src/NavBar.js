@@ -28,7 +28,7 @@ export default function Navbar() {
     // { text: "Image Gallery", path: "/imageGallery" },
     // { text: "Dog Pic", path: "/dogpic" },
     { text: "Joke", path: "/fetchjoke" },
-    // { text: "Calculator", path: "/calculator" },
+    { text: "Calculator", path: "/calculator" },
     // { text: "Counter", path: "/counter" },
     // // { text: "ArtFilter", path: "/artFilter" },
     // { text: "FilterFruit", path: "/filterFruits" },
