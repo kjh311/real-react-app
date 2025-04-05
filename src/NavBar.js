@@ -53,6 +53,8 @@ export default function Navbar() {
     { text: "Shopping Cart", path: "/shoppingCart" },
     { text: "Habit Tracker", path: "/habitTracker" },
     { text: "To Do List", path: "/todo" },
+    { text: "Timer", path: "/timer" },
+    { text: "Character Counter", path: "/characterCounter" },
     // { text: "Drinks", path: "/drinkRecipes" },
     // { text: "Weather API", path: "/weatherApi" },
     // { text: "Auto Count", path: "/autoCount" },

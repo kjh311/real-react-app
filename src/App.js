@@ -47,6 +47,8 @@ import ShoppingCart from "./ShoppingCart";
 import DrinkRecipes from "./DrinkRecipes";
 import HabitTracker from "./HabitTracker";
 import ToDo from "./ToDo";
+import Timer from "./Timer";
+import CharacterCounter from "./CharacterCounter";
 
 function Home() {
   console.log("Environment:", process.env.NODE_ENV);
@@ -105,6 +107,8 @@ function App() {
         <Route path="/drinkRecipes" element={<DrinkRecipes />} />
         <Route path="/habitTracker" element={<HabitTracker />} />
         <Route path="/todo" element={<ToDo />} />
+        <Route path="/timer" element={<Timer />} />
+        <Route path="/characterCounter" element={<CharacterCounter />} />
         {/* <Route path="/weatherApi" element={<WeatherAPI />} /> */}
       </Routes>
     </div>
