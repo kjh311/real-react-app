@@ -6,6 +6,8 @@ export default function CategoryToDoList() {
   const [categories, setCategories] = useState([]);
   const [tasks, setTasks] = useState([]);
   const [choice, setChoice] = useState("");
+  const [newTaskInput, setNewTaskInput] = useState("");
+  const [selectedCategoryId, setSelectedCategoryId] = useState("");
 
   useEffect(() => {
     axios
@@ -31,7 +33,47 @@ export default function CategoryToDoList() {
   }, [choice]);
 
   const handleCategoryChoice = (e) => {
-    setChoice(e.target.value);
+    const categoryName = e.target.value;
+    setChoice(categoryName);
+    const found = categories.find((cat) => cat.name === categoryName);
+    setSelectedCategoryId(found?.id || "");
+  };
+
+  const addNewTask = async (e) => {
+    e.preventDefault();
+    if (!newTaskInput.trim()) return;
+
+    const newTask = {
+      id: v4(),
+      task: newTaskInput,
+      completed: false,
+    };
+
+    try {
+      // Step 1: Get the current category
+      const res = await axios.get(
+        `http://localhost:5000/categories/${selectedCategoryId}`
+      );
+      const currentCategory = res.data;
+
+      // Step 2: Append new task
+      const updatedCategory = {
+        ...currentCategory,
+        tasks: [...currentCategory.tasks, newTask],
+      };
+
+      // Step 3: PUT updated category back
+      await axios.put(
+        `http://localhost:5000/categories/${selectedCategoryId}`,
+        updatedCategory
+      );
+
+      // Step 4: Update UI
+      setTasks((prev) => [...prev, newTask]);
+      setNewTaskInput("");
+    } catch (error) {
+      console.error("Error adding task:", error);
+    }
   };
 
   return (
@@ -70,6 +112,22 @@ export default function CategoryToDoList() {
           ) : (
             <p>No tasks found for this category.</p>
           )}
+          <form onSubmit={addNewTask} className="card">
+            <input
+              className="border rounded"
+              type="text"
+              value={newTaskInput}
+              placeholder="Enter a task to add"
+              onChange={(e) => setNewTaskInput(e.target.value)}
+            />
+            <br />
+            <button
+              type="submit"
+              className="p-2 m-2 border rounded bg-blue-200 hover:bg-blue-500"
+            >
+              Add Task
+            </button>
+          </form>
         </div>
       )}
     </div>

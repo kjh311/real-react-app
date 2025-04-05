@@ -18,6 +18,11 @@
           "task": "Feed the cat",
           "completed": "false",
           "id": "2"
+        },
+        {
+          "id": "6f96208b-2377-4cca-8ab6-6e2869789088",
+          "task": "Rake the yard",
+          "completed": false
         }
       ]
     },
@@ -39,6 +44,11 @@
           "task": "Call the manager",
           "completed": "false",
           "id": "5"
+        },
+        {
+          "id": "c9319154-7b76-487a-b8af-3ba04a5c9467",
+          "task": "Talk to corporate",
+          "completed": false
         }
       ]
     }
