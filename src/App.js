@@ -51,6 +51,7 @@ import Timer from "./Timer";
 import CharacterCounter from "./CharacterCounter";
 import CategoryToDoList from "./CategoryToDoList";
 import TodoReducer from "./TodoReducer";
+import CryptoPrice from "./CryptoPrice";
 
 function Home() {
   console.log("Environment:", process.env.NODE_ENV);
@@ -113,6 +114,7 @@ function App() {
         <Route path="/characterCounter" element={<CharacterCounter />} />
         <Route path="/categoryToDoList" element={<CategoryToDoList />} />
         <Route path="/todoReducer" element={<TodoReducer />} />
+        <Route path="/cryptoPrice" element={<CryptoPrice />} />
         {/* <Route path="/weatherApi" element={<WeatherAPI />} /> */}
       </Routes>
     </div>

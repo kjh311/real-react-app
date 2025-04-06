@@ -47,6 +47,7 @@ export default function Navbar() {
     // { text: "Count Words", path: "/countWords" },
     { text: "Pokemon Cards", path: "/pokemon" },
     { text: "Todo Reducer", path: "/todoReducer" },
+    { text: "Crypto Price", path: "/cryptoPrice" },
     // { text: "Country API", path: "/CountryApi" },
     // { text: "useReducer Counter", path: "/counterUseReducer" },
     // { text: "useReducer Name", path: "/nameUseReducer" },
