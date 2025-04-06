@@ -50,6 +50,7 @@ import ToDo from "./ToDo";
 import Timer from "./Timer";
 import CharacterCounter from "./CharacterCounter";
 import CategoryToDoList from "./CategoryToDoList";
+import TodoReducer from "./TodoReducer";
 
 function Home() {
   console.log("Environment:", process.env.NODE_ENV);
@@ -111,6 +112,7 @@ function App() {
         <Route path="/timer" element={<Timer />} />
         <Route path="/characterCounter" element={<CharacterCounter />} />
         <Route path="/categoryToDoList" element={<CategoryToDoList />} />
+        <Route path="/todoReducer" element={<TodoReducer />} />
         {/* <Route path="/weatherApi" element={<WeatherAPI />} /> */}
       </Routes>
     </div>
