@@ -52,6 +52,7 @@ import CharacterCounter from "./CharacterCounter";
 import CategoryToDoList from "./CategoryToDoList";
 import TodoReducer from "./TodoReducer";
 import CryptoPrice from "./CryptoPrice";
+import ZustandPractice from "./ZustandPractice";
 
 function Home() {
   console.log("Environment:", process.env.NODE_ENV);
@@ -115,6 +116,7 @@ function App() {
         <Route path="/categoryToDoList" element={<CategoryToDoList />} />
         <Route path="/todoReducer" element={<TodoReducer />} />
         <Route path="/cryptoPrice" element={<CryptoPrice />} />
+        <Route path="/zustand" element={<ZustandPractice />} />
         {/* <Route path="/weatherApi" element={<WeatherAPI />} /> */}
       </Routes>
     </div>
