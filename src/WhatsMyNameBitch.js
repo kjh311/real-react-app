@@ -1,4 +1,3 @@
-import React, { useContext } from "react";
 import { useUserInfo } from "./zustand/store";
 
 const WhatsMyNameBitch = () => {

@@ -53,6 +53,7 @@ import CategoryToDoList from "./CategoryToDoList";
 import TodoReducer from "./TodoReducer";
 import CryptoPrice from "./CryptoPrice";
 import ZustandPractice from "./ZustandPractice";
+import LocalStorageCrud from "./LocalStorageCrud";
 
 function Home() {
   console.log("Environment:", process.env.NODE_ENV);
@@ -81,7 +82,7 @@ function App() {
         <Route path="/fetchJoke" element={<FetchJoke />} />
         <Route path="/calculator" element={<Calculator />} />
         <Route path="/counter" element={<Counter />} />
-        {/* <Route path="/artFilter" element={<ArtFilter />} /> */}
+        <Route path="/artFilter" element={<ArtFilter />} />
         <Route path="/filterFruits" element={<FilterFruit />} />
         <Route path="/debounce" element={<Debounce />} />
         <Route path="/phone" element={<PhoneNumber />} />
@@ -117,6 +118,7 @@ function App() {
         <Route path="/todoReducer" element={<TodoReducer />} />
         <Route path="/cryptoPrice" element={<CryptoPrice />} />
         <Route path="/zustand" element={<ZustandPractice />} />
+        <Route path="/localCrud" element={<LocalStorageCrud />} />
         {/* <Route path="/weatherApi" element={<WeatherAPI />} /> */}
       </Routes>
     </div>
