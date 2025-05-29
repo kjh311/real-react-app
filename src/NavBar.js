@@ -50,6 +50,7 @@ export default function Navbar() {
     // { text: "Crypto Price", path: "/cryptoPrice" },
     { text: "Zustand", path: "/zustand" },
     { text: "Local Crud", path: "/localCrud" },
+    { text: "Product Crud", path: "/productCrud" },
     // { text: "Country API", path: "/CountryApi" },
     // { text: "useReducer Counter", path: "/counterUseReducer" },
     // { text: "useReducer Name", path: "/nameUseReducer" },

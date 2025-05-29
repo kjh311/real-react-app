@@ -29,7 +29,7 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "server": "json-server --watch products.json --port 5000",
+    "products": "json-server --watch products.json --port 5000",
     "calendar": "json-server --watch calendar.json --port 5000",
     "category": "json-server --watch category.json --port 5000",
     "build": "react-scripts build",

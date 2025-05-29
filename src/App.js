@@ -54,6 +54,7 @@ import TodoReducer from "./TodoReducer";
 import CryptoPrice from "./CryptoPrice";
 import ZustandPractice from "./ZustandPractice";
 import LocalStorageCrud from "./LocalStorageCrud";
+import ProductCrud from "./ProductCrud";
 
 function Home() {
   console.log("Environment:", process.env.NODE_ENV);
@@ -119,6 +120,7 @@ function App() {
         <Route path="/cryptoPrice" element={<CryptoPrice />} />
         <Route path="/zustand" element={<ZustandPractice />} />
         <Route path="/localCrud" element={<LocalStorageCrud />} />
+        <Route path="/productCrud" element={<ProductCrud />} />
         {/* <Route path="/weatherApi" element={<WeatherAPI />} /> */}
       </Routes>
     </div>

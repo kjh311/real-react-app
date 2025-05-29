@@ -6,6 +6,18 @@
       "description": "asf",
       "image": "https://www.shipbob.com/wp-content/uploads/2022/06/PRODUCT-RANGE.jpg",
       "price": "34234234"
+    },
+    {
+      "id": "bb5e3025-fa6c-4232-b902-1d3dd8d95048",
+      "title": "Soccer Ball",
+      "image": "https://i5.walmartimages.com/seo/Women-s-Pro-Training-Soccer-Ball-5_4a1a0565-3c91-4a3e-9514-6077a2fd89e0.ae6819c0f172ff4268eb22b3e240c02e.jpeg",
+      "productDescription": "Cool Soccer Ball"
+    },
+    {
+      "id": "20ca749a-2f4a-4d1d-ad81-64d14599b0fd",
+      "title": "Toy Plane",
+      "image": "https://s7d9.scene7.com/is/image/OCProduction/cr212?wid=800&hei=600",
+      "description": "Kid's toy plane"
     }
   ]
 }

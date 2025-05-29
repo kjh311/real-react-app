@@ -2,9 +2,7 @@ import React, { useState, useEffect } from "react";
 // import axios from "axios";
 
 const LocalStorageCrud = () => {
-  const [products, setProducts] = useState(
-    localStorage.getItem("Products") || []
-  );
+  const [products, setProducts] = useState([]);
   const [addProductName, setAddProductName] = useState("");
   const [addProductPrice, setAddProductPrice] = useState(0);
   const [addProductDescription, setAddProductDescription] = useState("");
@@ -13,6 +11,8 @@ const LocalStorageCrud = () => {
     if (!localStorage.getItem("Products")) {
       localStorage.setItem("Products", []);
     }
+
+    setProducts(JSON.parse(localStorage.getItem("Products")));
   }, []);
 
   const handleAddProduct = (e) => {
