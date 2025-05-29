@@ -7,6 +7,10 @@ const ProductCrud = () => {
   const [productTitle, setProductTitle] = useState("");
   const [productImage, setProductImage] = useState("");
   const [productDescription, setProductDescription] = useState("");
+  const [updateProductTitle, setUpdateProductTitle] = useState("");
+  const [updateProductImage, setUpdateProductImage] = useState("");
+  const [updateProductDescription, setUpdateProductDescription] = useState("");
+  const [productId, setProductId] = useState("");
 
   //get products
   useEffect(() => {
@@ -40,6 +44,28 @@ const ProductCrud = () => {
   };
 
   //edit product
+  const handleUpdateProduct = (e) => {
+    e.preventDefault();
+
+    axios
+      .put(`http://localhost:5000/products/${productId}`, {
+        title: updateProductTitle,
+        image: updateProductImage,
+        description: updateProductDescription,
+      })
+      .then((res) => {
+        const updatedProduct = products.map((product) =>
+          product.id === productId ? res.data : product
+        );
+
+        setProducts(updatedProduct);
+        setUpdateProductTitle("");
+        setUpdateProductImage("");
+        setUpdateProductDescription("");
+        setProductId("");
+      })
+      .catch((err) => console.error(err));
+  };
 
   //delete product
 
@@ -71,6 +97,42 @@ const ProductCrud = () => {
           <br />
           <button className="bg-red-500 p-2 m-2" type="submit">
             Submit Product
+          </button>
+        </form>
+      </div>
+      <div>
+        <h3>Update Product</h3>
+        <form className="p-2 m-2 bg-green-200" onSubmit={handleUpdateProduct}>
+          <input
+            value={updateProductTitle}
+            className="p-2 m-2  border"
+            placeholder="Production Title"
+            onChange={(e) => setUpdateProductTitle(e.target.value)}
+          />
+          <br />
+          <input
+            value={updateProductImage}
+            className="p-2 m-2  border"
+            placeholder="Production Image src"
+            onChange={(e) => setUpdateProductImage(e.target.value)}
+          />
+          <br />
+          <textarea
+            value={updateProductDescription}
+            className="p-2 m-2  border"
+            placeholder="Production Description"
+            onChange={(e) => setUpdateProductDescription(e.target.value)}
+          />
+          <br />
+          <input
+            className="p-2 m-2  border"
+            value={productId}
+            placeholder="Product Id"
+            onChange={(e) => setProductId(e.target.value)}
+          />
+          <br />
+          <button className="bg-red-500 p-2 m-2" type="submit">
+            Update Product
           </button>
         </form>
       </div>
