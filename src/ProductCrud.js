@@ -69,6 +69,18 @@ const ProductCrud = () => {
 
   //delete product
 
+  const handleDeleteProduct = (e) => {
+    e.preventDefault();
+
+    axios
+      .delete(`http://localhost:5000/products/${productId}`)
+      .then(() => {
+        setProducts(products.filter((product) => product.id !== productId));
+      })
+      .catch((err) => console.error(err));
+    setProductId("");
+  };
+
   return (
     <div>
       <div>
@@ -133,6 +145,21 @@ const ProductCrud = () => {
           <br />
           <button className="bg-red-500 p-2 m-2" type="submit">
             Update Product
+          </button>
+        </form>
+      </div>
+      <div>
+        <h3>Delete Product</h3>
+        <form className="p-2 m-2 bg-orange-300" onSubmit={handleDeleteProduct}>
+          <input
+            value={productId}
+            className="p-2 m-2 bg-green-200"
+            placeholder="enter product id"
+            onChange={(e) => setProductId(e.target.value)}
+          />
+          <br />
+          <button type="submit" className="p-2 m-2 bg-red-600">
+            Delete
           </button>
         </form>
       </div>
