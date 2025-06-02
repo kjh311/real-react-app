@@ -51,6 +51,7 @@ export default function Navbar() {
     { text: "Zustand", path: "/zustand" },
     { text: "Local Crud", path: "/localCrud" },
     { text: "Product Crud", path: "/productCrud" },
+    { text: "Item Crud", path: "/itemCrud" },
     // { text: "Country API", path: "/CountryApi" },
     // { text: "useReducer Counter", path: "/counterUseReducer" },
     // { text: "useReducer Name", path: "/nameUseReducer" },

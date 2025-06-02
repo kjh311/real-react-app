@@ -55,6 +55,7 @@ import CryptoPrice from "./CryptoPrice";
 import ZustandPractice from "./ZustandPractice";
 import LocalStorageCrud from "./LocalStorageCrud";
 import ProductCrud from "./ProductCrud";
+import ItemCrud from "./ItemCrud";
 
 function Home() {
   console.log("Environment:", process.env.NODE_ENV);
@@ -121,6 +122,7 @@ function App() {
         <Route path="/zustand" element={<ZustandPractice />} />
         <Route path="/localCrud" element={<LocalStorageCrud />} />
         <Route path="/productCrud" element={<ProductCrud />} />
+        <Route path="/itemCrud" element={<ItemCrud />} />
         {/* <Route path="/weatherApi" element={<WeatherAPI />} /> */}
       </Routes>
     </div>

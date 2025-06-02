@@ -54,17 +54,15 @@ const ProductCrud = () => {
         description: updateProductDescription,
       })
       .then((res) => {
-        const updatedProduct = products.map((product) =>
-          product.id === productId ? res.data : product
-        );
-
-        setProducts(updatedProduct);
-        setUpdateProductTitle("");
-        setUpdateProductImage("");
+        const updatedProducts = products.map((product) => {
+          return product.id === productId ? res.data : product;
+        });
+        setProducts(updatedProducts);
         setUpdateProductDescription("");
-        setProductId("");
+        setUpdateProductImage("");
+        setUpdateProductTitle("");
       })
-      .catch((err) => console.error(err));
+      .catch((err) => console.error(`Error editing product: ${err}`));
   };
 
   //delete product
@@ -72,12 +70,13 @@ const ProductCrud = () => {
   const handleDeleteProduct = (e) => {
     e.preventDefault();
 
-    axios
-      .delete(`http://localhost:5000/products/${productId}`)
-      .then(() => {
-        setProducts(products.filter((product) => product.id !== productId));
-      })
-      .catch((err) => console.error(err));
+    axios.delete(`http://localhost:5000/products/${productId}`).then(() => {
+      setProducts(
+        products.filter((product) => {
+          return product.id !== productId;
+        })
+      );
+    });
     setProductId("");
   };
 
