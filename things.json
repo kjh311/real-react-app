@@ -1,16 +1,3 @@
 {
-  "things": [
-    {
-      "name": "sdfhsdfh",
-      "description": "sdfgsdfg",
-      "image": "https://plus.unsplash.com/premium_photo-1664299631876-f143dc691c4d?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8ZnVubnl8ZW58MHx8MHx8fDA%3D",
-      "id": "95771bea-65c8-4e25-be48-febcce542a81"
-    },
-    {
-      "id": "85d40e1f-aaa0-4a80-8a76-7373bafb15e0",
-      "name": "blah",
-      "description": "McBlahFace",
-      "image": "https://thumbs.dreamstime.com/b/orangutan-baby-funny-face-months-old-31287963.jpg"
-    }
-  ]
+  "things": []
 }

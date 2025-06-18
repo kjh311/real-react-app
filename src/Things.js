@@ -69,6 +69,21 @@ const Things = () => {
   };
 
   // delete
+  const deleteThing = (e) => {
+    e.preventDefault();
+
+    axios
+      .delete(`http://localhost:5000/things/${thingIdDelete}`)
+      .then((res) =>
+        setThings(
+          things.filter((thing) => {
+            return thing.id !== thingIdDelete;
+          })
+        )
+      )
+      .catch((err) => console.error(err));
+    setThingIdDelete("");
+  };
 
   return (
     <div>
@@ -143,12 +158,27 @@ const Things = () => {
       </div>
       <br />
       <div className="p-2 m-2">
+        <form className="p-2 m-2 bg-purple-200" onSubmit={deleteThing}>
+          <h2>DELETE THING:</h2>
+          <br />
+          <input
+            className="p-2 m-2 bg-white"
+            value={thingIdDelete}
+            placeholder="enter an id"
+            onChange={(e) => setThingIdDelete(e.target.value)}
+          />
+          <br />
+          <button className="bg-red-500 p-2 m-2">Delete</button>
+        </form>
+      </div>
+      <br />
+      <div className="p-2 m-2">
         <h1>Things:</h1>
         <br />
         <ul>
-          {things.map((thing) => {
+          {things?.map((thing, id) => {
             return (
-              <li key={thing.id} className=" mt-10">
+              <li key={id} className=" mt-10">
                 <h2>NAME: {thing.name}</h2>
                 <br />
                 <h2>DESCRIPTION: {thing.description}</h2>
