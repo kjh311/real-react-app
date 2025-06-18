@@ -99,6 +99,7 @@ const ItemCrud = () => {
       <br />
       <br />
       <div className="bg-red-300 p-2 m-2">
+        <h1>Add Item:</h1>
         <form onSubmit={handleAddItem}>
           <input
             value={itemName}
@@ -127,6 +128,7 @@ const ItemCrud = () => {
         </form>
       </div>
       <div className=" bg-blue-100 p-2 m-2">
+        <h1>Edit item:</h1>
         <form className="p-2 m-2" onSubmit={handleEditItem}>
           <input
             value={updateItemName}
@@ -162,6 +164,7 @@ const ItemCrud = () => {
         </form>
       </div>
       <div className=" bg-blue-100 p-2 m-2">
+        <h1>Delete Item:</h1>
         <form className="p-2 m-2 bg-green-200" onSubmit={handleDeleteItem}>
           <input
             value={deleteItemId}
@@ -180,7 +183,7 @@ const ItemCrud = () => {
         <ul>
           {items?.map((item, id) => {
             return (
-              <li key={id}>
+              <li key={id} className="items-center">
                 <h4>{item.name}</h4>
                 <br />
                 <h4>{items.itemDescription}</h4>
