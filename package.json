@@ -34,6 +34,7 @@
     "category": "json-server --watch category.json --port 5000",
     "items": "json-server --watch items.json --port 5000",
     "things": "json-server --watch things.json --port 5000",
+    "cars": "json-server --watch cars.json --port 5000",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
