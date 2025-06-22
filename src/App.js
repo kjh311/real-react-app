@@ -58,6 +58,7 @@ import ProductCrud from "./ProductCrud";
 import ItemCrud from "./ItemCrud";
 import Things from "./Things";
 import Cars from "./Cars";
+import Movies from "./Movies";
 
 function Home() {
   console.log("Environment:", process.env.NODE_ENV);
@@ -127,6 +128,7 @@ function App() {
         <Route path="/itemCrud" element={<ItemCrud />} />
         <Route path="/things" element={<Things />} />
         <Route path="/cars" element={<Cars />} />
+        <Route path="/movies" element={<Movies />} />
 
         {/* <Route path="/weatherApi" element={<WeatherAPI />} /> */}
       </Routes>
