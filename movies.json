@@ -1,3 +1,10 @@
 {
-  "movies": []
+  "movies": [
+    {
+      "id": "d7fc",
+      "title": "Saving Private Ryan",
+      "genre": "Action / War",
+      "description": "Tom Hanks kills Nazis"
+    }
+  ]
 }

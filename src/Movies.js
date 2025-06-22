@@ -166,11 +166,12 @@ const Movies = () => {
           </button>
         </form>
       </div>
-      <div className="p-2 m-2 bg-purple-200">
+      <div className="p-2 m-2 ">
+        <h1>Movies:</h1>
         <ul>
           {movies.map((movie) => {
             return (
-              <li key={movie.id}>
+              <li key={movie.id} className="bg-purple-200">
                 <h1>{movie.title}</h1>
                 <br />
                 <h1>{movie.genre}</h1>
@@ -179,6 +180,7 @@ const Movies = () => {
                 <br />
                 <h1>{movie.id}</h1>
                 <br />
+                <hr className="mb-2"></hr>
               </li>
             );
           })}
